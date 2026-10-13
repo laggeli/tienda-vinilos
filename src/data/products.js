@@ -2,10 +2,10 @@ export const productos = [
     {
         id: 1,
         name: "Oktubre",
-        artist: "Patricio Rey y sus Redonditos de Ricota",
-        category: "Rock nacional",
+        artist: "Los redondos",
+        category: "Rock",
         price: 85000,
-        image: "/img/oktubre.jpg",
+        image: "/img/losredondos-oktubre.jpg",
         description: "",
         stock: 10
     },
@@ -13,9 +13,9 @@ export const productos = [
         id: 2,
         name: "Despierta",
         artist: "Las Pelotas",
-        category: "Rock nacional",
+        category: "Rock",
         price: 60000,
-        image: "/img/despierta.jpg",
+        image: "/img/laspelotas-despierta.jpg",
         description: "",
         stock: 4
     },
@@ -23,9 +23,9 @@ export const productos = [
         id: 3,
         name: "Especial",
         artist: "Viejas Locas",
-        category: "Rock nacional",
-        price: 85000,
-        image: "/img/especial.jpg",
+        category: "Rock",
+        price: 65000,
+        image: "/img/viejaslocas-especial.jpg",
         description: "",
         stock: 5
     },
@@ -33,9 +33,9 @@ export const productos = [
         id: 4,
         name: "Clics Modernos",
         artist: "Charly García",
-        category: "Rock nacional",
+        category: "Rock",
         price: 82000,
-        image: "/img/clicsModernos.jpg",
+        image: "/img/charlygarcía-clicsmodernos.jpg",
         description: "",
         stock: 15
     },
@@ -43,19 +43,19 @@ export const productos = [
         id: 5,
         name: "Ay ay ay",
         artist: "Los Piojos",
-        category: "Rock nacional",
+        category: "Rock",
         price: 76000,
-        image: "/img/oktubre.jpg",
+        image: "/img/lospiojos-ayayay.jpg",
         description: "",
-        stock: 9
+        stock: 0
     },
     {
         id: 6,
         name: "3er Arco",
         artist: "Los Piojos",
-        category: "Rock nacional",
+        category: "Rock",
         price: 74000,
-        image: "/img/3erArco.jpg",
+        image: "/img/lospiojos-3erarco.png",
         description: "",
         stock: 4
     },
@@ -63,9 +63,9 @@ export const productos = [
         id: 7,
         name: "Canción Animal",
         artist: "Soda Stereo",
-        category: "Rock nacional",
+        category: "Rock",
         price: 90000,
-        image: "/img/cancionAnimal.jpg",
+        image: "/img/sodastereo-cancionanimal.jpg",
         description: "",
         stock: 25
     },
@@ -73,9 +73,9 @@ export const productos = [
         id: 8,
         name: "Dynamo",
         artist: "Soda Stereo",
-        category: "Rock nacional",
+        category: "Rock",
         price: 85000,
-        image: "/img/dynamo.jpg",
+        image: "/img/sodastereo-dynamo.jpg",
         description: "",
         stock: 21
     },
@@ -85,7 +85,7 @@ export const productos = [
         artist: "Miranda",
         category: "Pop",
         price: 57000,
-        image: "/img/hotelMiranda.jpg",
+        image: "/img/miranda-hotelmiranda!.jpg",
         description: "",
         stock: 2
     },
@@ -95,7 +95,7 @@ export const productos = [
         artist: "Miranda",
         category: "Pop",
         price: 52500,
-        image: "/img/elDiscoDeTuCorazon.jpg",
+        image: "/img/miranda-eldiscodetucorazón.jpg",
         description: "",
         stock: 3
     },
@@ -103,9 +103,9 @@ export const productos = [
         id: 11,
         name: "Bocanada",
         artist: "Gustavo Cerati",
-        category: "Rock nacional",
+        category: "Rock",
         price: 87600,
-        image: "/img/bocanada.jpg",
+        image: "/img/gustavocerati-bocanada.jpg",
         description: "",
         stock: 8
     },
@@ -113,19 +113,19 @@ export const productos = [
         id: 12,
         name: "Amor Amarillo",
         artist: "Gustavo Cerati",
-        category: "Rock nacional",
+        category: "Rock",
         price: 85000,
-        image: "/img/oktubre.jpg",
+        image: "/img/gustavocerati-amoramarillo.jpg",
         description: "",
-        stock: 0
+        stock: 15
     },
     {
         id: 13,
         name: "Mucho Más",
         artist: "Babasonicos",
-        category: "Rock nacional",
+        category: "Rock",
         price: 50000,
-        image: "/img/muchoMas.jpg",
+        image: "/img/babasonicos-muchomás.jpg",
         description: "",
         stock: 5
     },
@@ -133,19 +133,19 @@ export const productos = [
         id: 14,
         name: "Anoche",
         artist: "Babasonicos",
-        category: "Rock nacional",
+        category: "Rock",
         price: 49000,
-        image: "/img/anoche.jpg",
+        image: "/img/babasonicos-anoche.jpg",
         description: "",
-        stock: 2
+        stock: 3
     },
     {
         id: 15,
         name: "Antihumano",
         artist: "Attaque 77",
-        category: "Rock nacional",
+        category: "Rock",
         price: 57000,
-        image: "/img/antihumano.jpg",
+        image: "/img/attaque77-antihumano.jpg",
         description: "",
         stock: 13
     },
@@ -153,10 +153,10 @@ export const productos = [
         id: 16,
         name: "Divididos",
         artist: "Divididos",
-        category: "Rock nacional",
+        category: "Rock",
         price: 45000,
-        image: "/img/divididos.jpg",
+        image: "/img/divididos-divididos.jpg",
         description: "",
-        stock: 1
+        stock: 0
     }
 ]
