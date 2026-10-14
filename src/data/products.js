@@ -6,6 +6,7 @@ export const productos = [
         category: "Rock",
         price: 85000,
         image: "/img/losredondos-oktubre.jpg",
+        imageVinyl: "/img/losredondos-oktubre-vinyl.jpg",
         description: "",
         stock: 10
     },
@@ -16,6 +17,7 @@ export const productos = [
         category: "Rock",
         price: 60000,
         image: "/img/laspelotas-despierta.jpg",
+        imageVinyl: "/img/laspelotas-despierta-vinyl.jpg",
         description: "",
         stock: 4
     },
@@ -26,6 +28,7 @@ export const productos = [
         category: "Rock",
         price: 65000,
         image: "/img/viejaslocas-especial.jpg",
+        imageVinyl: "/img/viejaslocas-especial-vinyl.jpg",
         description: "",
         stock: 5
     },
@@ -36,6 +39,7 @@ export const productos = [
         category: "Rock",
         price: 82000,
         image: "/img/charlygarcía-clicsmodernos.jpg",
+        imageVinyl: "/img/charlygarcía-clicsmodernos-vinyl.jpg",
         description: "",
         stock: 15
     },
@@ -46,6 +50,7 @@ export const productos = [
         category: "Rock",
         price: 76000,
         image: "/img/lospiojos-ayayay.jpg",
+        imageVinyl: "/img/lospiojos-ayayay-vinyl.jpg",
         description: "",
         stock: 0
     },
@@ -56,6 +61,7 @@ export const productos = [
         category: "Rock",
         price: 74000,
         image: "/img/lospiojos-3erarco.png",
+        imageVinyl: "/img/lospiojos-3erarco-vinyl.jpg",
         description: "",
         stock: 4
     },
@@ -66,6 +72,7 @@ export const productos = [
         category: "Rock",
         price: 90000,
         image: "/img/sodastereo-cancionanimal.jpg",
+        imageVinyl: "/img/sodastereo-cancionanimal-vinyl.jpg",
         description: "",
         stock: 25
     },
@@ -76,6 +83,7 @@ export const productos = [
         category: "Rock",
         price: 85000,
         image: "/img/sodastereo-dynamo.jpg",
+        imageVinyl: "/img/sodastereo-dynamo-vinyl.jpg",
         description: "",
         stock: 21
     },
@@ -86,6 +94,7 @@ export const productos = [
         category: "Pop",
         price: 57000,
         image: "/img/miranda-hotelmiranda!.jpg",
+        imageVinyl: "/img/miranda-hotelmiranda!-vinyl.jpg",
         description: "",
         stock: 2
     },
@@ -96,6 +105,7 @@ export const productos = [
         category: "Pop",
         price: 52500,
         image: "/img/miranda-eldiscodetucorazón.jpg",
+        imageVinyl: "/img/miranda-eldiscodetucorazón-vinyl.jpg",
         description: "",
         stock: 3
     },
@@ -106,6 +116,7 @@ export const productos = [
         category: "Rock",
         price: 87600,
         image: "/img/gustavocerati-bocanada.jpg",
+        imageVinyl: "/img/gustavocerati-bocanada-vinyl.jpg",
         description: "",
         stock: 8
     },
@@ -116,6 +127,7 @@ export const productos = [
         category: "Rock",
         price: 85000,
         image: "/img/gustavocerati-amoramarillo.jpg",
+        imageVinyl: "/img/gustavocerati-amoramarillo-vinyl.jpg",
         description: "",
         stock: 15
     },
@@ -126,6 +138,7 @@ export const productos = [
         category: "Rock",
         price: 50000,
         image: "/img/babasonicos-muchomás.jpg",
+        imageVinyl: "/img/babasonicos-muchomás-vinyl.jpg",
         description: "",
         stock: 5
     },
@@ -136,6 +149,7 @@ export const productos = [
         category: "Rock",
         price: 49000,
         image: "/img/babasonicos-anoche.jpg",
+        imageVinyl: "/img/babasonicos-anoche-vinyl.jpg",
         description: "",
         stock: 3
     },
@@ -146,6 +160,7 @@ export const productos = [
         category: "Rock",
         price: 57000,
         image: "/img/attaque77-antihumano.jpg",
+        imageVinyl: "/img/attaque77-antihumano-vinyl.jpg",
         description: "",
         stock: 13
     },
@@ -156,6 +171,7 @@ export const productos = [
         category: "Rock",
         price: 45000,
         image: "/img/divididos-divididos.jpg",
+        imageVinyl: "/img/divididos-divididos-vinyl.jpg",
         description: "",
         stock: 0
     }

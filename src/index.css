@@ -2,3 +2,17 @@ body {
   background-color: #f5f0eb;
   color: #2b2621;
 }
+
+.tema-claro {
+  min-height: 100vh;
+  background-color: #f4ead5;
+  color: #29251f;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tema-nocturno {
+  min-height: 100vh;
+  background-color: #211f1b;
+  color: #f4ead5;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
