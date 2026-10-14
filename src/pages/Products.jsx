@@ -4,12 +4,14 @@ import { Link } from "react-router";
 import { Container, Row, Col, Card, Button, Form, Offcanvas } from "react-bootstrap";
 import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
+import SelectGenres from "../components/SelectGenres.jsx";
 
 function Products() {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
 
   const [busqueda, setBusqueda] = useState("");
   const [disponibilidad, setDisponibilidad] = useState("todos");
+  const [genero, setGenero] = useState("todos");
   const [orden, setOrden] = useState("nombre-az");
   const [precioMin, setPrecioMin] = useState("");
   const [precioMax, setPrecioMax] = useState("");
@@ -33,10 +35,16 @@ function Products() {
       (precioMin === "" || producto.price >= Number(precioMin)) &&
       (precioMax === "" || producto.price <= Number(precioMax));
 
+    const coincideGenero = 
+      genero === "todos" || 
+      (producto.category && producto.category.toLowerCase() === 
+      genero.toLowerCase());
+
     return (
       coincideBusqueda &&
       coincideDisponibilidad &&
-      coincidePrecio
+      coincidePrecio &&
+      coincideGenero
     );
   });
 
@@ -94,6 +102,11 @@ function Products() {
                 <option value="precio-mayor">Precio: mayor a menor</option>
               </Form.Select>
             </Form.Group>
+
+            <SelectGenres
+              value={genero}
+              onChange={(e) => setGenero(e.target.value)}
+            />
 
             <Form.Group className="mb-3">
               <Form.Label className="fw-semibold">Disponibilidad</Form.Label>
