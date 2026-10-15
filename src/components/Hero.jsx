@@ -1,7 +1,7 @@
 import { Container, Button } from 'react-bootstrap'
 import { Link } from 'react-router';
 
-export default function Hero() {
+function Hero() {
   return (
     <section className="vinilo-hero">
       <div className="vinilo-hero__overlay" aria-hidden="true" />
@@ -44,3 +44,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default Hero
