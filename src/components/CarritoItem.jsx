@@ -1,12 +1,3 @@
-// import React from 'react'
-
-// function CarritoItem() {
-//   return (
-//     <div>CarritoItem</div>
-//   )
-// }
-
-// export default CarritoItem
 import { Card, Button } from "react-bootstrap";
 import styles from "./CarritoItem.module.css";
 
