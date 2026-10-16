@@ -10,24 +10,30 @@ import {
   totalPesos
 } from "../utils/operacionesCarrito";
 
-function Carrito() {
+function Carrito({onActualizarCarrito}) {
   // Se obtiene el carrito inicial desde el módulo de operaciones
   const [carrito, setCarrito] = useState(obtenerCarrito());
+
+  // Refrescar carrito
+  const refrescarCarrito = () => {
+    setCarrito([...obtenerCarrito()]);
+    if (onActualizarCarrito) { onActualizarCarrito(); }
+  };
 
   // Operaciones del carrito se importan desde el módulo de operaciones 
   function aumentar(id) {
     incrementarCantidad(id);
-    setCarrito([...obtenerCarrito()]);
+    refrescarCarrito();
   }
 
   function disminuir(id) {
     restarCantidad(id);
-    setCarrito([...obtenerCarrito()]);
+    refrescarCarrito();
   }
 
   function eliminar(id) {
     eliminarProducto(id);
-    setCarrito([...obtenerCarrito()]);
+    refrescarCarrito();
   }
 
   return (
