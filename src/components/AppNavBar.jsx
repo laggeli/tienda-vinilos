@@ -1,23 +1,45 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar as BootstrapNavbar, Nav, Container, } from "react-bootstrap";
 import { NavLink, Link } from "react-router";
+import { IoCartOutline } from "react-icons/io5";
+import styles from "./AppNavBar.module.css";
 
 function AppNavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <BootstrapNavbar expand="lg" className={styles.navbar} >
       <Container>
-        <Navbar.Brand as={Link} to="/"> Lado B </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/">Inicio</Nav.Link>
-            <Nav.Link as={NavLink} to="/productos">Productos</Nav.Link>
-            <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
+        <BootstrapNavbar.Brand as={Link} to="/" className={styles.logo}>
+          <span className={styles.logoDisco} aria-hidden="true">
+            <span />
+          </span>
+
+          <span className={styles.logoTexto}>
+            Lado V
+            <small>VINILOS CON HISTORIA</small>
+          </span>
+        </BootstrapNavbar.Brand>
+
+        <BootstrapNavbar.Toggle
+          aria-controls="menu-principal"
+          className={styles.menuToggle}
+        />
+
+        <BootstrapNavbar.Collapse id="menu-principal">
+          <Nav className="ms-auto align-items-lg-center gap-lg-2">
+            <Nav.Link as={NavLink} to="/" end className={styles.navLink}> Inicio </Nav.Link>
+            <Nav.Link as={NavLink} to="/productos" className={styles.navLink} > Vinilos </Nav.Link>
+            <Nav.Link as={NavLink} to="/contacto" className={styles.navLink} > Contacto </Nav.Link>
+
+            <div className={styles.separador} />
+
+            <Nav.Link as={NavLink} to="/carrito"
+              title="Carrito" className={styles.carrito}>
+              <IoCartOutline size={25} />
+              <span>Carrito</span>
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+        </BootstrapNavbar.Collapse>
       </Container>
-    </Navbar>
+    </BootstrapNavbar>
   );
 }
 

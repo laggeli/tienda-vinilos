@@ -1,6 +1,12 @@
+import AnalogRitualBanner from "../components/AnalogiaRitualBanner"
+import Hero from "../components/Hero"
+
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <Hero/>
+      <AnalogRitualBanner/>
+    </>
   )
 }
 

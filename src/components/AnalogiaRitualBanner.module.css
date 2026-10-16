@@ -1,0 +1,37 @@
+/* AnalogiaRitualBanner.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+.caprasimo-regular {
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ritualSection {
+  background-color: #B33912;
+}
+
+.ritualCard {
+  background-color: #F9F3EA;
+  border: 2px solid #2C1810;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.ritualCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 0px #2C1810 !important;
+}
+
+.ritualTextDark {
+  color: #2C1810;
+}
+
+.ritualTextOrange {
+  color: #D95325;
+}
+
+.ritualNumber {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 1;
+}

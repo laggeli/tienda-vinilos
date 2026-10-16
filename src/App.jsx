@@ -1,19 +1,19 @@
 import { Route, Routes } from "react-router";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductsDetails from "./pages/ProductDetails";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AppNavBar from "./components/AppNavBar";
 
 function App() {
   return (
     <> 
-    <Header />
+    <AppNavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Products />} />
-        <Route path="/productos" element={<ProductsDetails />} />
+        <Route path="/productos/:id" element={<ProductsDetails />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
