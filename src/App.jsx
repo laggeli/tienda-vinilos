@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductsDetails from "./pages/ProductDetails";
 import Contact from "./pages/Contact";
+import Carrito from "./pages/Carrito";
 import NotFound from "./pages/NotFound";
 import AppNavBar from "./components/AppNavBar";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/productos" element={<Products />} />
         <Route path="/productos/:id" element={<ProductsDetails />} />
         <Route path="/contacto" element={<Contact />} />
+        <Route path="/carrito" element={<Carrito />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

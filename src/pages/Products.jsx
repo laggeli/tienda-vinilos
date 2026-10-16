@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { Container, Row, Col, Card, Button, Form, Offcanvas } from "react-bootstrap";
 import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
+import { agregarProducto } from "../utils/operacionesCarrito";
 
 function Products() {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
@@ -61,6 +62,7 @@ function Products() {
   function agregarAlCarrito(producto) {
     if (producto.stock <= 0) return;
     console.log("Producto seleccionado:", producto);
+    agregarProducto(producto); 
     setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   }
 
