@@ -6,7 +6,7 @@ import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
 import { agregarProducto } from "../utils/operacionesCarrito";
 
-function Products() {
+function Products({onActualizarCarrito}) {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
   
   const [busqueda, setBusqueda] = useState("");
@@ -63,6 +63,7 @@ function Products() {
     if (producto.stock <= 0) return;
     console.log("Producto seleccionado:", producto);
     agregarProducto(producto); 
+    if (onActualizarCarrito) { onActualizarCarrito(); }
     setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   }
 
