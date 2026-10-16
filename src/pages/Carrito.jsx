@@ -1,35 +1,34 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import CarritoItem from "../components/CarritoItem";
+import {
+  obtenerCarrito,
+  incrementarCantidad,
+  restarCantidad,
+  eliminarProducto,
+  cantidadTotal,
+  totalPesos
+} from "../utils/operacionesCarrito";
 
 function Carrito() {
-  const [carrito, setCarrito] = useState([
-    // ejemplo prueba, despues hay que llenarlo desde Productos.jsx
-    { id: 1, name: "Vinilo A", artist: "Artista X", price: 2000, cantidad: 1 },
-    { id: 2, name: "Vinilo B", artist: "Artista Y", price: 2500, cantidad: 2 }
-  ]);
+  // Se obtiene el carrito inicial desde el módulo de operaciones
+  const [carrito, setCarrito] = useState(obtenerCarrito());
 
-  function sumarProducto(id) {
-  setCarrito(carritoActual =>
-    carritoActual.map(item =>
-      item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
-    )
-  );
-}
+  // Operaciones del carrito se importan desde el módulo de operaciones 
+  function aumentar(id) {
+    incrementarCantidad(id);
+    setCarrito([...obtenerCarrito()]);
+  }
 
-function restarProducto(id) {
-  setCarrito(carritoActual =>
-    carritoActual.map(item =>
-      item.id === id && item.cantidad > 1
-        ? { ...item, cantidad: item.cantidad - 1 }
-        : item
-    )
-  );
-}
+  function disminuir(id) {
+    restarCantidad(id);
+    setCarrito([...obtenerCarrito()]);
+  }
 
-function eliminarProducto(id) {
-  setCarrito(carritoActual => carritoActual.filter(item => item.id !== id));
-}
+  function eliminar(id) {
+    eliminarProducto(id);
+    setCarrito([...obtenerCarrito()]);
+  }
 
   return (
     <Container className="py-4">
@@ -37,18 +36,24 @@ function eliminarProducto(id) {
       {carrito.length === 0 ? (
         <p>No hay productos en el carrito.</p>
       ) : (
-        carrito.map(producto => (
-          <CarritoItem
-            key={producto.id}
-            producto={producto}
-            sumar={sumarProducto}
-            restar={restarProducto}
-            eliminar={eliminarProducto}
-          />
-        ))
+        <>
+          {carrito.map(producto => (
+            <CarritoItem
+              key={producto.id}
+              producto={producto}
+              aumentar={aumentar}
+              disminuir={disminuir}
+              eliminar={eliminar}
+            />
+          ))}
+
+          <hr />
+          {/* Totales */}
+          <p><strong>Total de ítems:</strong> {cantidadTotal()}</p>
+          <p><strong>Total a pagar:</strong> ${totalPesos()}</p>
+        </>
       )}
     </Container>
   );
 }
-
 export default Carrito;

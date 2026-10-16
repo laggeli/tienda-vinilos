@@ -2,8 +2,11 @@ import { Navbar as BootstrapNavbar, Nav, Container, } from "react-bootstrap";
 import { NavLink, Link } from "react-router";
 import { IoCartOutline } from "react-icons/io5";
 import styles from "./AppNavBar.module.css";
+import { cantidadTotal } from "../utils/operacionesCarrito";
 
 function AppNavBar() {
+  const total = cantidadTotal();
+  
   return (
     <BootstrapNavbar expand="lg" className={styles.navbar} >
       <Container>
@@ -34,6 +37,7 @@ function AppNavBar() {
             <Nav.Link as={NavLink} to="/carrito"
               title="Carrito" className={styles.carrito}>
               <IoCartOutline size={25} />
+              {total > 0 && <span className={styles.badge}>{total}</span>}
               <span>Carrito</span>
             </Nav.Link>
           </Nav>

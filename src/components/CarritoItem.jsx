@@ -10,7 +10,7 @@
 import { Card, Button } from "react-bootstrap";
 import styles from "./CarritoItem.module.css";
 
-function CarritoItem({ producto, sumar, restar, eliminar }) {
+function CarritoItem({ producto, aumentar, disminuir, eliminar }) {
   return (
     <Card className={`mb-3 ${styles.item}`}>
       <Card.Body className="d-flex justify-content-between align-items-center">
@@ -22,10 +22,10 @@ function CarritoItem({ producto, sumar, restar, eliminar }) {
           <small>Cantidad: {producto.cantidad}</small>
         </div>
         <div className="d-flex gap-2">
-          <Button variant="secondary" size="sm" onClick={() => restar(producto.id)}>
+          <Button variant="secondary" size="sm" onClick={() => disminuir(producto.id)}>
             -
           </Button>
-          <Button variant="secondary" size="sm" onClick={() => sumar(producto.id)}>
+          <Button variant="secondary" size="sm" onClick={() => aumentar(producto.id)}>
             +
           </Button>
           <Button variant="danger" size="sm" onClick={() => eliminar(producto.id)}>
