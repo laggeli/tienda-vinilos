@@ -1,20 +1,28 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { Link } from "react-router";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router"; 
 import { Container, Row, Col, Card, Button, Form, Offcanvas } from "react-bootstrap";
 import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
 import { agregarProducto } from "../utils/operacionesCarrito";
+import VinylCard from "../components/VinylCard.jsx"; 
 
 function Products() {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
   
+  // 1. Leemos los parámetros de la URL
+  const [searchParams] = useSearchParams();
+  const filtroInicialNovedades = searchParams.get("filtro") === "novedades";
+
   const [busqueda, setBusqueda] = useState("");
   const [categoria, setCategoria] = useState("todas");
   const [disponibilidad, setDisponibilidad] = useState("todos");
   const [orden, setOrden] = useState("nombre-az");
   const [precioMin, setPrecioMin] = useState("");
   const [precioMax, setPrecioMax] = useState("");
+  
+  // 2. Nuevo estado para el interruptor de Destacados
+  const [soloDestacados, setSoloDestacados] = useState(filtroInicialNovedades);
+  
   const [mostrarOffcanvas, setMostrarOffcanvas] = useState(false);
   const [avisoCarrito, setAvisoCarrito] = useState("");
 
@@ -23,6 +31,7 @@ function Products() {
 
   const categoriasUnicas = [...new Set(productos.map((p) => p.category))];
 
+  // 3. Agregamos la lógica de Destacados al filtrado maestro
   const productosFiltrados = productos.filter((producto) => {
     const texto = busqueda.trim().toLowerCase();
 
@@ -41,11 +50,15 @@ function Products() {
       (precioMin === "" || producto.price >= Number(precioMin)) &&
       (precioMax === "" || producto.price <= Number(precioMax));
 
+    // Si el switch está activo, solo pasa si es destacado. Si no, pasan todos.
+    const coincideDestacado = soloDestacados ? producto.destacado : true;
+
     return (
       coincideBusqueda &&
       coincideCategoria &&
       coincideDisponibilidad &&
-      coincidePrecio
+      coincidePrecio &&
+      coincideDestacado
     );
   });
 
@@ -66,6 +79,7 @@ function Products() {
     setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   }
 
+  // 4. Limpiamos también el interruptor
   function limpiarFiltros() {
     setBusqueda("");
     setCategoria("todas");
@@ -73,6 +87,7 @@ function Products() {
     setOrden("nombre-az");
     setPrecioMin("");
     setPrecioMax("");
+    setSoloDestacados(false); // Apagamos el switch
   }
 
   return (
@@ -126,6 +141,18 @@ function Products() {
 
         <Offcanvas.Body style={{ backgroundColor: "#f4ead5" }}>
           <Form>
+            <Form.Group className="mb-4 p-3 border rounded" style={{ borderColor: "#dfcfb3", backgroundColor: "rgba(255,255,255,0.4)" }}>
+              <Form.Check 
+                type="switch"
+                id="switch-destacados"
+                label={<strong>Solo Novedades</strong>}
+                checked={soloDestacados}
+                onChange={(e) => setSoloDestacados(e.target.checked)}
+                className={styles.etiquetaFiltro}
+                style={{ color: "var(--terracota, #b94f2d)", cursor: "pointer" }}
+              />
+            </Form.Group>
+
             <Form.Group className="mb-4">
               <Form.Label className={styles.etiquetaFiltro}>
                 Género musical
@@ -219,65 +246,26 @@ function Products() {
         </div>
       )}
 
-      <Row className={styles.grilla}>
-        {productosOrdenados.length > 0 ? (
-          productosOrdenados.map((producto) => (
-            <Col key={producto.id} xs={12} sm={6} md={4}
-              lg={3} className={styles.columnaProducto}>
-              <Card className={styles.tarjeta}>
-                <Link
-                  to={`/producto/${producto.id}`}
-                  className={styles.enlaceDetalle}
-                  aria-label={`Ver detalle de ${producto.name}`}>
-                  <div className={styles.cajaImagenVinilo}>
-                    <img src={producto.image} alt={`Tapa de ${producto.name}`}
-                      className={`${styles.imagenVinilo} ${styles.imagenPrincipal}`}
-                    />
-
-                    {producto.imageVinyl && (
-                      <img src={producto.imageVinyl} alt={`Vinilo de ${producto.name}`}
-                        className={`${styles.imagenVinilo} ${styles.imagenAlternativa}`}
-                      />
-                    )}
-
-                    <span className={styles.verDetalle}> Ver disco </span>
-                  </div>
-
-                  <Card.Body className={styles.cuerpoTarjeta}>
-                    <span className={styles.tarjetaArtista}> {producto.artist} </span>
-
-                    <Card.Title className={styles.tarjetaNombre}> {producto.name} </Card.Title>
-
-                    <Card.Text className={styles.tarjetaPrecio}>
-                      <strong> ${producto.price.toLocaleString("es-AR")} </strong>
-                    </Card.Text>
-                  </Card.Body>
-                </Link>
-
-                <div className={styles.containerBoton}>
-                  <Button className={styles.btnNaranja}
-                    disabled={producto.stock <= 0} onClick={() => agregarAlCarrito(producto)}
-                  >
-                    {producto.stock > 0 ? "Agregar  +" : "Sin stock"}
-                  </Button>
-                </div>
-              </Card>
+        <Row className={styles.grilla}>
+          {productosOrdenados.length > 0 ? (
+            productosOrdenados.map((producto) => (
+              <VinylCard 
+                key={producto.id} 
+                producto={producto} 
+                onAdd={agregarAlCarrito} 
+              />
+            ))
+          ) : (
+            <Col xs={12}>
+              <div className={styles.sinResultados}>
+                <h4>No encontramos vinilos</h4>
+                <p>Probá con otra búsqueda o modificá los filtros.</p>
+                <Button className={styles.btnBoton} onClick={limpiarFiltros}>
+                  Ver todos los vinilos
+                </Button>
+              </div>
             </Col>
-          ))
-        ) : (
-          <Col xs={12}>
-            <div className={styles.sinResultados}>
-              <h4>No encontramos vinilos</h4>
-              <p>Probá con otra búsqueda o modificá los filtros.</p>
-              <Button
-                className={styles.btnBoton}
-                onClick={limpiarFiltros}
-              >
-                Ver todos los vinilos
-              </Button>
-            </div>
-          </Col>
-        )}
+          )}
       </Row>
     </Container>
   );

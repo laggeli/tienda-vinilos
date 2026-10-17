@@ -8,6 +8,7 @@ export const productos = [
         image: "/img/losredondos-oktubre.jpg",
         imageVinyl: "/img/losredondos-oktubre-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 10
     },
     {
@@ -19,6 +20,7 @@ export const productos = [
         image: "/img/laspelotas-despierta.jpg",
         imageVinyl: "/img/laspelotas-despierta-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 4
     },
     {
@@ -30,6 +32,7 @@ export const productos = [
         image: "/img/viejaslocas-especial.jpg",
         imageVinyl: "/img/viejaslocas-especial-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 5
     },
     {
@@ -41,6 +44,7 @@ export const productos = [
         image: "/img/charlygarcía-clicsmodernos.jpg",
         imageVinyl: "/img/charlygarcía-clicsmodernos-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 15
     },
     {
@@ -52,6 +56,7 @@ export const productos = [
         image: "/img/lospiojos-ayayay.jpg",
         imageVinyl: "/img/lospiojos-ayayay-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 0
     },
     {
@@ -63,6 +68,7 @@ export const productos = [
         image: "/img/lospiojos-3erarco.png",
         imageVinyl: "/img/lospiojos-3erarco-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 4
     },
     {
@@ -74,6 +80,7 @@ export const productos = [
         image: "/img/sodastereo-cancionanimal.jpg",
         imageVinyl: "/img/sodastereo-cancionanimal-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 25
     },
     {
@@ -85,6 +92,7 @@ export const productos = [
         image: "/img/sodastereo-dynamo.jpg",
         imageVinyl: "/img/sodastereo-dynamo-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 21
     },
     {
@@ -96,6 +104,7 @@ export const productos = [
         image: "/img/miranda-hotelmiranda!.jpg",
         imageVinyl: "/img/miranda-hotelmiranda!-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 2
     },
     {
@@ -107,6 +116,7 @@ export const productos = [
         image: "/img/miranda-eldiscodetucorazón.jpg",
         imageVinyl: "/img/miranda-eldiscodetucorazón-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 3
     },
     {
@@ -118,6 +128,7 @@ export const productos = [
         image: "/img/gustavocerati-bocanada.jpg",
         imageVinyl: "/img/gustavocerati-bocanada-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 8
     },
     {
@@ -129,6 +140,7 @@ export const productos = [
         image: "/img/gustavocerati-amoramarillo.jpg",
         imageVinyl: "/img/gustavocerati-amoramarillo-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 15
     },
     {
@@ -140,6 +152,7 @@ export const productos = [
         image: "/img/babasonicos-muchomás.jpg",
         imageVinyl: "/img/babasonicos-muchomás-vinyl.jpg",
         description: "",
+        destacado: false,
         stock: 5
     },
     {
@@ -151,6 +164,7 @@ export const productos = [
         image: "/img/babasonicos-anoche.jpg",
         imageVinyl: "/img/babasonicos-anoche-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 3
     },
     {
@@ -162,6 +176,7 @@ export const productos = [
         image: "/img/attaque77-antihumano.jpg",
         imageVinyl: "/img/attaque77-antihumano-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 13
     },
     {
@@ -173,6 +188,7 @@ export const productos = [
         image: "/img/divididos-divididos.jpg",
         imageVinyl: "/img/divididos-divididos-vinyl.jpg",
         description: "",
+        destacado: true,
         stock: 0
     }
 ]

@@ -1,0 +1,61 @@
+.featuredSection {
+  background-color: var(--crema-clara, #fbf5e9);
+}
+
+.headerContainer {
+  margin-bottom: 2.5rem;
+}
+
+.textColumn {
+  max-width: 70%;
+  text-align: left;
+}
+
+
+.preTitle {
+  display: block;
+  color: var(--terracota, #b94f2d);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--marron, #29251f);
+  font-weight: normal;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  color: var(--marron, #29251f);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.linkColumn {
+  padding-bottom: 0.5rem; 
+}
+
+.linkAll {
+  color: var(--terracota, #b94f2d);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--terracota, #b94f2d);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.linkAll:hover {
+  opacity: 0.8;
+  color: var(--terracota, #b94f2d);
+}

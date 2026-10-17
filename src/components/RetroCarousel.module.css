@@ -1,0 +1,67 @@
+.contenedorCarrusel {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.botonRetro {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-color: var(--terracota, #b94f2d);
+  border-radius: 50%;
+  border: 2px solid var(--marron, #29251f);
+  box-shadow: 3px 3px 0px var(--marron, #29251f);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
+}
+
+.botonRetro:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--marron, #29251f);
+}
+
+.botonRetro::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid var(--crema-clara, #fbf5e9);
+  border-right: 3px solid var(--crema-clara, #fbf5e9);
+}
+
+.previo::after {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.siguiente::after {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+.contenedorCarrusel :global(.carousel-indicators button) {
+  background-color: var(--marron, #29251f);
+  height: 6px;
+  border: none;
+  opacity: 0.3;
+}
+
+.contenedorCarrusel :global(.carousel-indicators button.active) {
+  background-color: var(--terracota, #b94f2d);
+  opacity: 1;
+}
+
+.contenedorCarrusel :global(.carousel-control-prev) {
+  left: -5%; 
+  width: auto;
+}
+
+.contenedorCarrusel :global(.carousel-control-next) {
+  right: -5%;
+  width: auto;
+}
+
+.contenedorCarrusel :global(.carousel-control-prev),
+.contenedorCarrusel :global(.carousel-control-next) {
+  z-index: 5;
+}

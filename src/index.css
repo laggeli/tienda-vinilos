@@ -1,3 +1,14 @@
+:root {
+  --crema: #f4ead5;
+  --crema-clara: #fbf5e9;
+  --terracota: #b94f2d;
+  --terracota-oscura: #943b22;
+  --marron: #29251f;
+  --marron-suave: #756c5c;
+  --borde: #dfcfb3;
+  --verde: #65734e;
+}
+
 body {
   background-color: #f5f0eb;
   color: #2b2621;
