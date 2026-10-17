@@ -6,7 +6,7 @@ import styles from "./Products.module.css";
 import { agregarProducto } from "../utils/operacionesCarrito";
 import VinylCard from "../components/VinylCard.jsx"; 
 
-function Products() {
+function Products({onActualizarCarrito}) {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
   
   // 1. Leemos los parámetros de la URL
@@ -76,6 +76,7 @@ function Products() {
     if (producto.stock <= 0) return;
     console.log("Producto seleccionado:", producto);
     agregarProducto(producto); 
+    if (onActualizarCarrito) { onActualizarCarrito(); }
     setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   }
 
