@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Container, Row, Carousel as BootstrapCarousel } from 'react-bootstrap';
 import { Link } from 'react-router';
 import VinylCard from './VinylCard'; 
 import RetroCarousel from './RetroCarousel'; 
 import { productos } from '../data/products'; 
+import { agregarProducto } from "../utils/operacionesCarrito";
+import AvisoCarrito from './AvisoCarrito';
 import styles from './FeaturedSection.module.css';
 
 function FeaturedSection() {
@@ -17,9 +20,15 @@ function FeaturedSection() {
   };
 
   const gruposDeDiscos = agruparDiscos(discosDestacados, 4);
-
+  
+  const [avisoCarrito, setAvisoCarrito] = useState("");
   const handleAgregarAlCarrito = (producto) => {
-    alert(`¡${producto.name} agregado a tu batea!`);
+    // alert(`¡${producto.name} agregado al carrito!`);
+    if (producto.stock <= 0) return;
+        console.log("Producto seleccionado:", producto);
+        agregarProducto(producto); 
+        // if (onActualizarCarrito) { onActualizarCarrito(); }
+        setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   };
 
   return (
@@ -42,6 +51,12 @@ function FeaturedSection() {
             </Link>
         </div>
         </div>
+        {avisoCarrito && (
+          <AvisoCarrito 
+            mensaje={avisoCarrito} 
+            onClose={() => setAvisoCarrito("")} 
+          />
+        )}
 
         {discosDestacados.length > 0 ? (
           <RetroCarousel>

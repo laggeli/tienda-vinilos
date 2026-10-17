@@ -1,0 +1,38 @@
+.avisoCarrito {
+  position: fixed;
+  z-index: 1055;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  max-width: min(440px, calc(100vw - 32px));
+  padding: 15px 18px;
+  border-left: 5px solid #829267;
+  background: var(--marron);
+  color: #fff8e9;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
+  animation: aparecerAviso 0.25s ease;
+}
+
+.cerrarAviso {
+  border: 0;
+  background: transparent;
+  color: #fff8e9;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@keyframes aparecerAviso {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
