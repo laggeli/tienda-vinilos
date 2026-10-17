@@ -36,9 +36,9 @@ Para clonar y ejecutar el proyecto en una máquina local:
 2. **Instalar dependencias:**
     ```bash
     npm i
-3. **Ejecutar el servidor de desarrollo::**
+3. **Ejecutar el servidor de desarrollo:**
     ```bash
     npm run dev
-4. **Abrir la dirección mostrada en la terminal (por ejemplo: http://localhost:5175) en el navegador.:**
+4. **Abrir la dirección mostrada en la terminal (por ejemplo: http://localhost:5175) en el navegador.**
 
 ## Capturas de Pantalla
