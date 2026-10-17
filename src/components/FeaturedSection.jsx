@@ -8,7 +8,7 @@ import { agregarProducto } from "../utils/operacionesCarrito";
 import AvisoCarrito from './AvisoCarrito';
 import styles from './FeaturedSection.module.css';
 
-function FeaturedSection() {
+function FeaturedSection({onActualizarCarrito}) {
   const discosDestacados = productos.filter(producto => producto.destacado);
 
   const agruparDiscos = (array, tamañoGrupo) => {
@@ -27,7 +27,7 @@ function FeaturedSection() {
     if (producto.stock <= 0) return;
         console.log("Producto seleccionado:", producto);
         agregarProducto(producto); 
-        // if (onActualizarCarrito) { onActualizarCarrito(); }
+        if (onActualizarCarrito) { onActualizarCarrito(); }
         setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   };
 

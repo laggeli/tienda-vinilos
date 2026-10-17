@@ -17,7 +17,7 @@ function App() {
     <> 
     <AppNavBar cantidadProductosEnCarrito={total} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home onActualizarCarrito={actualizarTotal}/>} />
         <Route path="/productos" element={<Products onActualizarCarrito={actualizarTotal}/>} />
         <Route path="/productos/:id" element={<ProductsDetails onActualizarCarrito={actualizarTotal} />} />
         <Route path="/contacto" element={<Contact onActualizarCarrito={actualizarTotal}/>} />

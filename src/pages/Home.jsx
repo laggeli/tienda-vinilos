@@ -2,11 +2,11 @@ import AnalogRitualBanner from "../components/AnalogiaRitualBanner"
 import FeaturedSection from "../components/FeaturedSection"
 import Hero from "../components/Hero"
 
-function Home() {
+function Home({onActualizarCarrito}) {
   return (
     <>
       <Hero/>
-      <FeaturedSection/>
+      <FeaturedSection onActualizarCarrito={onActualizarCarrito}/>
       <AnalogRitualBanner/>
     </>
   )
