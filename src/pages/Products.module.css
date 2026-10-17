@@ -94,17 +94,17 @@
   min-height: 43px;
   padding: 10px 17px;
   border: 1px solid var(--marron);
-  border-radius: 2px;
-  background: #e2b13d;
-  color: var(--marron);
+  border-radius: 9px;
+  background: var(--terracota);
+  color: white;
   font-weight: 700;
   transition: background-color 0.2s, transform 0.2s;
 }
 
 .btnBoton:hover {
   border-color: var(--marron);
-  background: #edc45e;
-  color: var(--marron);
+  background: #cc720b;
+  color: white;
   transform: translateY(-1px);
 }
 
@@ -149,7 +149,7 @@
 .btnLimpiar:hover {
   border-color: var(--terracota);
   background: var(--terracota);
-  color: rgb(255, 128, 24);
+  color: white;
 }
 
 .grilla { row-gap: 30px; }
@@ -361,6 +361,19 @@
 
 .sinResultados p {
   color: var(--marron-suave);
+}
+
+.viniloVacioGif {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  animation: girarLento 10s linear infinite; 
+}
+
+@keyframes girarLento {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 575px) {

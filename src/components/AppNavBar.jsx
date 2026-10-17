@@ -28,9 +28,9 @@ function AppNavBar({cantidadProductosEnCarrito}) {
 
         <BootstrapNavbar.Collapse id="menu-principal">
           <Nav className="ms-auto align-items-lg-center gap-lg-2">
-            <Nav.Link as={NavLink} to="/" end className={styles.navLink}> Inicio </Nav.Link>
-            <Nav.Link as={NavLink} to="/productos" className={styles.navLink} > Vinilos </Nav.Link>
-            <Nav.Link as={NavLink} to="/contacto" className={styles.navLink} > Contacto </Nav.Link>
+            <Nav.Link as={NavLink} to="/" end title="Inicio" className={styles.navLink}> Inicio </Nav.Link>
+            <Nav.Link as={NavLink} to="/productos" title="Vinilos" className={styles.navLink} > Vinilos </Nav.Link>
+            <Nav.Link as={NavLink} to="/contacto" title="Contacto" className={styles.navLink} > Contacto </Nav.Link>
 
             <div className={styles.separador} />
 

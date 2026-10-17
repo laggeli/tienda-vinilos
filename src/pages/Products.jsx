@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router"; 
-import { Container, Row, Col, Card, Button, Form, Offcanvas } from "react-bootstrap";
+import { useSearchParams } from "react-router"; 
+import { Container, Row, Col, Button, Form, Offcanvas } from "react-bootstrap";
 import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
 import { agregarProducto } from "../utils/operacionesCarrito";
@@ -9,7 +9,6 @@ import VinylCard from "../components/VinylCard.jsx";
 function Products({onActualizarCarrito}) {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
   
-  // 1. Leemos los parámetros de la URL
   const [searchParams] = useSearchParams();
   const filtroInicialNovedades = searchParams.get("filtro") === "novedades";
 
@@ -20,7 +19,6 @@ function Products({onActualizarCarrito}) {
   const [precioMin, setPrecioMin] = useState("");
   const [precioMax, setPrecioMax] = useState("");
   
-  // 2. Nuevo estado para el interruptor de Destacados
   const [soloDestacados, setSoloDestacados] = useState(filtroInicialNovedades);
   
   const [mostrarOffcanvas, setMostrarOffcanvas] = useState(false);
@@ -31,7 +29,6 @@ function Products({onActualizarCarrito}) {
 
   const categoriasUnicas = [...new Set(productos.map((p) => p.category))];
 
-  // 3. Agregamos la lógica de Destacados al filtrado maestro
   const productosFiltrados = productos.filter((producto) => {
     const texto = busqueda.trim().toLowerCase();
 
@@ -50,7 +47,6 @@ function Products({onActualizarCarrito}) {
       (precioMin === "" || producto.price >= Number(precioMin)) &&
       (precioMax === "" || producto.price <= Number(precioMax));
 
-    // Si el switch está activo, solo pasa si es destacado. Si no, pasan todos.
     const coincideDestacado = soloDestacados ? producto.destacado : true;
 
     return (
@@ -80,7 +76,6 @@ function Products({onActualizarCarrito}) {
     setAvisoCarrito(`${producto.name} se agregó al carrito.`);
   }
 
-  // 4. Limpiamos también el interruptor
   function limpiarFiltros() {
     setBusqueda("");
     setCategoria("todas");
@@ -88,7 +83,7 @@ function Products({onActualizarCarrito}) {
     setOrden("nombre-az");
     setPrecioMin("");
     setPrecioMax("");
-    setSoloDestacados(false); // Apagamos el switch
+    setSoloDestacados(false); 
   }
 
   return (
@@ -259,6 +254,8 @@ function Products({onActualizarCarrito}) {
           ) : (
             <Col xs={12}>
               <div className={styles.sinResultados}>
+                <img src="/img/vinilo.png" alt="Vinilo buscando" 
+                className={styles.viniloVacioGif} />
                 <h4>No encontramos vinilos</h4>
                 <p>Probá con otra búsqueda o modificá los filtros.</p>
                 <Button className={styles.btnBoton} onClick={limpiarFiltros}>
