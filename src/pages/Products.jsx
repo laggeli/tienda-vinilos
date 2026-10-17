@@ -5,6 +5,7 @@ import { productos } from "../data/products.js";
 import styles from "./Products.module.css";
 import { agregarProducto } from "../utils/operacionesCarrito";
 import VinylCard from "../components/VinylCard.jsx"; 
+import AvisoCarrito from "../components/AvisoCarrito.jsx";
 
 function Products({onActualizarCarrito}) {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);
@@ -232,38 +233,33 @@ function Products({onActualizarCarrito}) {
         </Offcanvas.Body>
       </Offcanvas>
 
-      {avisoCarrito && (
-        <div className={styles.avisoCarrito} role="status">
-          <span>✓ {avisoCarrito}</span>
-          <button type="button" onClick={() => setAvisoCarrito("")}
-            aria-label="Cerrar aviso" className={styles.cerrarAviso}>
-            ×
-          </button>
-        </div>
-      )}
+      <AvisoCarrito 
+        mensaje={avisoCarrito} 
+        onClose={() => setAvisoCarrito("")} 
+      />
 
-        <Row className={styles.grilla}>
-          {productosOrdenados.length > 0 ? (
-            productosOrdenados.map((producto) => (
-              <VinylCard 
-                key={producto.id} 
-                producto={producto} 
-                onAdd={agregarAlCarrito} 
-              />
-            ))
-          ) : (
-            <Col xs={12}>
-              <div className={styles.sinResultados}>
-                <img src="/img/vinilo.png" alt="Vinilo buscando" 
-                className={styles.viniloVacioGif} />
-                <h4>No encontramos vinilos</h4>
-                <p>Probá con otra búsqueda o modificá los filtros.</p>
-                <Button className={styles.btnBoton} onClick={limpiarFiltros}>
-                  Ver todos los vinilos
-                </Button>
-              </div>
-            </Col>
-          )}
+      <Row className={styles.grilla}>
+        {productosOrdenados.length > 0 ? (
+          productosOrdenados.map((producto) => (
+            <VinylCard 
+              key={producto.id} 
+              producto={producto} 
+              onAdd={agregarAlCarrito} 
+            />
+          ))
+        ) : (
+          <Col xs={12}>
+            <div className={styles.sinResultados}>
+              <img src="/img/vinilo.png" alt="Vinilo buscando" 
+              className={styles.viniloVacioGif} />
+              <h4>No encontramos vinilos</h4>
+              <p>Probá con otra búsqueda o modificá los filtros.</p>
+              <Button className={styles.btnBoton} onClick={limpiarFiltros}>
+                Ver todos los vinilos
+              </Button>
+            </div>
+          </Col>
+        )}
       </Row>
     </Container>
   );
