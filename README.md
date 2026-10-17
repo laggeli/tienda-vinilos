@@ -30,8 +30,8 @@ Para clonar y ejecutar el proyecto en una máquina local:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/lado-v-vinilos.git
-   cd lado-v-vinilos
+   git clone https://github.com/laggeli/tienda-vinilos.git
+   cd tienda-vinilos
 
 2. **Instalar dependencias:**
     ```bash
