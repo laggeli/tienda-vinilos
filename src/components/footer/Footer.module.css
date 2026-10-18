@@ -1,24 +1,69 @@
 .footer {
-  margin-top: 60px;
-  border-top: 5px solid #b94f2d;
+  margin-top: 35px;
+  border-top: 3px solid #b94f2d;
   background-color: #201c18;
   color: #e8decc;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .contenido {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px 60px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 42px 28px;
+  padding: 22px 28px;
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  justify-items: center; 
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.columna h3 {
+  margin: 0 0 10px;
+  color: #b94f2d;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1rem;
+}
+
+.columna a {
+  display: block;
+  width: fit-content;
+  margin: 7px 0;
+  color: #e8decc;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.columna a:hover {
+  color: #b94f2d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 28px;
+  border-top: 1px solid #b94f2d;
+  background-color: #201c18;
 }
 
 .marca {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .disco {
@@ -26,116 +71,79 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 34px;
+  height: 34px;
   border: 2px solid #b94f2d;
   border-radius: 50%;
   background: repeating-radial-gradient(
     circle,
     #201c18 0,
-    #201c18 3px,
-    #594334 4px,
-    #201c18 5px
+    #201c18 2px,
+    #594334 3px,
+    #201c18 4px
   );
 }
 
 .disco span {
-  width: 12px;
-  height: 12px;
-  border: 3px solid #f4ead5;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #f4ead5;
   border-radius: 50%;
   background-color: #dba93f;
 }
 
+.identidad {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .logo {
-  margin: 0;
   color: #f4ead5;
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2rem;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.35rem;
   line-height: 1;
 }
 
 .subtitulo {
-  margin: 7px 0 0;
-  color: #d9a34a;
-  font-size: 0.65rem;
+  color: #f4ead5;
+  font-size: 0.52rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.3px;
+  line-height: 0.95;
 }
 
-.descripcion {
-  max-width: 430px;
-  margin: 0;
-  color: #c9bda8;
-  font-size: 0.9rem;
-  line-height: 1.8;
+.legales { 
+  text-align: center; 
+  flex-grow: 1;
 }
 
-.columnas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  grid-column: 1 / -1;
-  padding-top: 25px;
-  border-top: 1px solid #594b3c;
-}
-
-.columnas h3 {
-  margin: 0 0 15px;
-  color: #e7b65a;
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 1.15rem;
-}
-
-.columnas a {
-  display: block;
-  width: fit-content;
-  margin: 10px 0;
+.legales p {
+  margin: 0 0 4px;
   color: #e8decc;
-  font-size: 0.88rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  font-size: 0.75rem;
 }
 
-.columnas a:hover {
-  color: #d9a34a;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.pie {
-  padding: 20px 24px;
-  border-top: 1px solid #594b3c;
-  background-color: #191613;
-  text-align: center;
-}
-
-.pie p {
-  margin: 0 0 6px;
-  color: #e8decc;
-  font-size: 0.8rem;
-}
-
-.pie small {
+.legales small {
   color: #a99b85;
-  font-size: 0.72rem;
-  line-height: 1.6;
+  font-size: 0.68rem;
 }
 
-@media (max-width: 600px) {
-  .contenido {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 32px 22px;
-  }
+@media (max-width: 500px) {
+  .contenido { padding: 20px; }
 
   .columnas { gap: 18px; }
 
-  .logo { font-size: 1.8rem }
+  .pie {
+    align-items: center; /* Centrado también en celulares */
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
 
-  .pie { padding: 18px 20px; }
+  .legales { text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .columnas a { transition: none; }
+  .columna a { transition: none; }
 }

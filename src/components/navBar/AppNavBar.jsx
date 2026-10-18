@@ -34,7 +34,6 @@ function AppNavBar({cantidadProductosEnCarrito}) {
             <Nav.Link as={NavLink} to="/carrito"
               title="Carrito" className={styles.carrito}>
               <CarritoIcono total={cantidadProductosEnCarrito} />
-              <span> Carrito</span>
             </Nav.Link>
           </Nav>
         </BootstrapNavbar.Collapse>
