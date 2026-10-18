@@ -2,3 +2,9 @@
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+.tituloResumenCompra {
+  text-align: left;
+}
+.tachado {
+  text-decoration: line-through;
+}

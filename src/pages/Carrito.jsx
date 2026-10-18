@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CarritoItem from "../components/CarritoItem";
+import ResumenCompraCard from "../components/ResumenCompraCard";
 import {
   obtenerCarrito,
   incrementarCantidad,
   restarCantidad,
-  eliminarProducto,
-  cantidadTotal,
-  totalPesos
+  eliminarProducto
 } from "../utils/operacionesCarrito";
 
 function Carrito({onActualizarCarrito}) {
@@ -41,23 +40,24 @@ function Carrito({onActualizarCarrito}) {
       <h2>Tu Carrito</h2>
       {carrito.length === 0 ? (
         <p>No hay productos en el carrito.</p>
-      ) : (
-        <>
-          {carrito.map(producto => (
-            <CarritoItem
-              key={producto.id}
-              producto={producto}
-              aumentar={aumentar}
-              disminuir={disminuir}
-              eliminar={eliminar}
-            />
-          ))}
-
-          <hr />
-          {/* Totales */}
-          <p><strong>Total de ítems:</strong> {cantidadTotal()}</p>
-          <p><strong>Total a pagar:</strong> ${totalPesos()}</p>
-        </>
+        ) : (
+          <Row>
+            <Col md={8}>
+              {carrito.map(producto => (
+                <CarritoItem
+                  key={producto.id}
+                  producto={producto}
+                  aumentar={aumentar}
+                  disminuir={disminuir}
+                  eliminar={eliminar}
+                />
+              ))}
+            </Col>
+            {/* Totales */}
+            <Col md={4}>
+              <ResumenCompraCard />
+            </Col>
+          </Row>
       )}
     </Container>
   );
