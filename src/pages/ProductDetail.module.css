@@ -1,0 +1,201 @@
+/* ProductDetail.module.css */
+
+.detailSection {
+  background-color: var(--crema-clara, #fbf5e9);
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+/* Migas de pan (Breadcrumbs) - Adiós al color azul por defecto */
+.breadcrumb {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+}
+
+.breadcrumb a {
+  color: var(--marron, #29251f);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--terracota, #b94f2d);
+}
+
+.breadcrumb span {
+  color: var(--marron-suave, #756c5c);
+}
+
+/* Contenedor estricto para evitar que la imagen sea gigante */
+.coverWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.coverContainer {
+  position: relative;
+  max-width: 480px; /* Límite estricto de tamaño */
+  width: 100%;
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  /* Sombras para dar efecto de relieve 3D sobre la mesa */
+  box-shadow: 12px 12px 30px rgba(41, 37, 31, 0.2),
+              0 0 0 1px rgba(0,0,0,0.05); 
+  object-fit: cover;
+  aspect-ratio: 1 / 1; /* Fuerza a que sea un cuadrado perfecto aunque la foto original no lo sea */
+}
+
+/* Efecto sutil de celofán */
+.coverGlare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+/* Columna de Textos Alineada a la Izquierda */
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem; /* Espacio para que no se pegue al disco */
+  text-align: left;
+}
+
+.artistName {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  color: var(--terracota, #b94f2d);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.albumName {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--marron, #29251f);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.metaData {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metaBadge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid var(--marron, #29251f);
+  border-radius: 50px;
+  color: var(--marron, #29251f);
+}
+
+.price {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--marron, #29251f);
+  margin-bottom: 0.5rem;
+}
+
+.stockInfo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.inStock { color: #2b7a4b; }
+.outOfStock { color: var(--terracota, #b94f2d); }
+
+.description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  color: var(--marron, #29251f);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde, #dfcfb3);
+}
+
+/* Botón de Agregar - Estilo Botón Físico Retro */
+.btnAgregar {
+  background-color: var(--terracota, #b94f2d);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 1.2rem;
+  border: 2px solid var(--marron, #29251f);
+  border-radius: 50px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 4px 4px 0px var(--marron, #29251f);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btnAgregar:hover:not(:disabled) {
+  background-color: #9d4225;
+  color: #fff;
+}
+
+.btnAgregar:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--marron, #29251f);
+}
+
+.btnAgregar:disabled {
+  background-color: #dfcfb3;
+  border-color: #dfcfb3;
+  color: var(--marron-suave, #756c5c);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Sugeridos */
+.suggestedSection {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 2px solid var(--borde, #dfcfb3);
+}
+
+.suggestedHeader {
+  text-align: left; 
+  margin-bottom: 2.5rem;
+}
+
+.suggestedTitle {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: var(--marron, #29251f);
+  margin-bottom: 0.3rem;
+}
+
+.suggestedSubtitle {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--terracota, #b94f2d); 
+  font-size: 1.15rem;
+  font-style: italic; 
+  margin: 0;
+}

@@ -9,7 +9,7 @@ import AvisoCarrito from './AvisoCarrito';
 import styles from './FeaturedSection.module.css';
 
 function FeaturedSection({onActualizarCarrito}) {
-  const discosDestacados = productos.filter(producto => producto.destacado);
+  const discosDestacados = productos.filter(producto => producto.destacado).slice(0, 8);
 
   const agruparDiscos = (array, tamañoGrupo) => {
     const grupos = [];

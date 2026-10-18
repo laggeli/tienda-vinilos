@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onActualizarCarrito={actualizarTotal}/>} />
         <Route path="/productos" element={<Products onActualizarCarrito={actualizarTotal}/>} />
-        <Route path="/productos/:id" element={<ProductsDetails onActualizarCarrito={actualizarTotal} />} />
+        <Route path="/producto/:id" element={<ProductsDetails onActualizarCarrito={actualizarTotal} />} />
         <Route path="/contacto" element={<Contact onActualizarCarrito={actualizarTotal}/>} />
         <Route path="/carrito" element={<Carrito onActualizarCarrito={actualizarTotal}/>} />
         <Route path="*" element={<NotFound />} />

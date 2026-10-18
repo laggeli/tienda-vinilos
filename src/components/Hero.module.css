@@ -50,9 +50,10 @@
 
 /* Titular gigante retro */
 .heroTitle {
-  font-family: 'Fraunces', serif;
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 4.5rem;
-  font-weight: 900;
   color: #F9F3EA;
   line-height: 1.05;
   margin-bottom: 1.5rem;
