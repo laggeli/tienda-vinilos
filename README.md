@@ -1,5 +1,6 @@
-# CIU - Tienda Online
-# Lado V - Vinilos con Historia 🎵💿
+# 📀 Lado V - Vinilos con Historia ♬ 
+
+![Gif](assets/tienda-vinilo.gif)
 
 ## Descripción del Proyecto
 **Lado V** es una aplicación web desarrollada en React que simula una tienda e-commerce de vinilos de música. Los usuarios pueden explorar el catálogo de productos, buscar y filtrar discos por categoría, precio o disponibilidad, consultar el detalle de cada vinilo, agregarlos a un carrito interactivo con persistencia local y simular la confirmación de la compra.
