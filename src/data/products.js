@@ -9,6 +9,7 @@ export const productos = [
         imageVinyl: "/img/losredondos-oktubre-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 10
     },
     {
@@ -21,6 +22,7 @@ export const productos = [
         imageVinyl: "/img/laspelotas-despierta-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 4
     },
     {
@@ -33,6 +35,7 @@ export const productos = [
         imageVinyl: "/img/viejaslocas-especial-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 5
     },
     {
@@ -45,6 +48,7 @@ export const productos = [
         imageVinyl: "/img/charlygarcía-clicsmodernos-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 15
     },
     {
@@ -57,6 +61,7 @@ export const productos = [
         imageVinyl: "/img/lospiojos-ayayay-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 0
     },
     {
@@ -69,6 +74,7 @@ export const productos = [
         imageVinyl: "/img/lospiojos-3erarco-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 4
     },
     {
@@ -81,6 +87,7 @@ export const productos = [
         imageVinyl: "/img/sodastereo-cancionanimal-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 25
     },
     {
@@ -93,6 +100,7 @@ export const productos = [
         imageVinyl: "/img/sodastereo-dynamo-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 21
     },
     {
@@ -105,6 +113,7 @@ export const productos = [
         imageVinyl: "/img/miranda-hotelmiranda!-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 2
     },
     {
@@ -117,6 +126,7 @@ export const productos = [
         imageVinyl: "/img/miranda-eldiscodetucorazón-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 3
     },
     {
@@ -129,6 +139,7 @@ export const productos = [
         imageVinyl: "/img/gustavocerati-bocanada-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 8
     },
     {
@@ -141,6 +152,7 @@ export const productos = [
         imageVinyl: "/img/gustavocerati-amoramarillo-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 15
     },
     {
@@ -153,6 +165,7 @@ export const productos = [
         imageVinyl: "/img/babasonicos-muchomás-vinyl.jpg",
         description: "",
         destacado: false,
+        dameFuego: false,
         stock: 5
     },
     {
@@ -165,6 +178,7 @@ export const productos = [
         imageVinyl: "/img/babasonicos-anoche-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 3
     },
     {
@@ -177,6 +191,7 @@ export const productos = [
         imageVinyl: "/img/attaque77-antihumano-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 13
     },
     {
@@ -189,6 +204,111 @@ export const productos = [
         imageVinyl: "/img/divididos-divididos-vinyl.jpg",
         description: "",
         destacado: true,
+        dameFuego: false,
         stock: 0
+    },
+    {
+        id: 17,
+        name: "Una muchacha y una Guitarra",
+        artist: "Sandro",
+        category: "Balada",
+        price: 52000,
+        image: "/img/sandro-muchacha.jpg",
+        imageVinyl: "/img/sandro-muchacha-vinyl.jpg",
+        description: "El álbum que consolidó su transición definitiva hacia la balada romántica, transformándolo en un ídolo masivo. \nTracklist destacado: 1. Una muchacha y una guitarra, 2. Porque yo te amo, 3. Como lo hice yo, 4. Penumbras.",
+        destacado: true,
+        dameFuego: true,
+        stock: 5
+    },
+    {
+        id: 18,
+        name: "Sandro de América",
+        artist: "Sandro",
+        category: "Balada",
+        price: 58000,
+        image: "/img/sandro-america.jpg",
+        imageVinyl: "/img/sandro-america-vinyl.jpg",
+        description: "El disco histórico que le dio su mítico apodo, arrasando en ventas en todo el continente y definiendo su estilo inconfundible. \nTracklist destacado: 1. Rosa, Rosa, 2. Guitarras al viento, 3. Mi amigo el puma, 4. Nada más.",
+        destacado: false,
+        dameFuego: true,
+        stock: 12
+    },
+    {
+        id: 19,
+        name: "Espectacular",
+        artist: "Sandro",
+        category: "Balada",
+        price: 48000,
+        image: "/img/sandro-espectacular.jpg",
+        imageVinyl: "/img/sandro-espectacular-vinyl.jpg",
+        description: "Una verdadera joya de los 70s. Su sonido contundente y arreglos orquestales acompañaron una de sus épocas más teatrales. \nTracklist destacado: 1. Dame el fuego de tu amor, 2. El maniquí, 3. Se te nota, 4. Me amas y me dejas.",
+        destacado: true,
+        dameFuego: true,
+        stock: 3
+    },
+    {
+        id: 20,
+        name: "Sandro Lo Mejor",
+        artist: "Sandro",
+        category: "Recopilatorio",
+        price: 65000,
+        image: "/img/sandro-lomejor.jpg",
+        imageVinyl: "/img/sandro-lomejor-vinyl.jpg",
+        description: "Edición especial recopilatoria con sus himnos eternos. Ideal para iniciar la colección y repasar la trayectoria de un grande. \nTracklist destacado: 1. Rosa Rosa, 2. Tengo, 3. Trigal, 4. Penumbras.",
+        destacado: false,
+        dameFuego: true,
+        stock: 8
+    },
+    {
+        id: 21,
+        name: "La magia de Sandro",
+        artist: "Sandro",
+        category: "Rock",
+        price: 55000,
+        image: "/img/sandro-magia.jpg",
+        imageVinyl: "/img/sandro-magia-vinyl.jpg",
+        description: "Rock, pop y balada se mezclan en este LP lleno de energía frenética, mostrando al Gitano en su faceta más salvaje y seductora. \nTracklist destacado: 1. Tengo, 2. Me amas y me dejas, 3. Lluvia de estrellas, 4. Y abrázame.",
+        destacado: true,
+        dameFuego: true,
+        stock: 0
+    },
+    {
+        id: 22,
+        name: "Sandro",
+        artist: "Sandro",
+        category: "Balada",
+        price: 49000,
+        image: "/img/sandro-homonimo.jpg",
+        imageVinyl: "/img/sandro-homonimo-vinyl.jpg",
+        description: "Una obra homónima cargada de dramatismo interpretativo, donde la voz y la presencia de Sandro brillan de forma espectacular. \nTracklist destacado: 1. Señor cochero, 2. Pobre mi madre querida, 3. Sin sentido, 4. Las manos.",
+        destacado: false,
+        dameFuego: true,
+        stock: 4
+    },
+    {
+        id: 23,
+        name: "Muchacho",
+        artist: "Sandro",
+        category: "Balada",
+        price: 60000,
+        image: "/img/sandro-muchacho.jpg",
+        imageVinyl: "/img/sandro-muchacho-vinyl.jpg",
+        description: "Álbum esencial que sirve como banda sonora de la exitosa película homónima protagonizada por El Gitano. Un pedazo de historia del cine y la música argentina. \nTracklist destacado: 1. Trigal, 2. Te quiero tanto, amada mía, 3. Muchacho, 4. Pupilas de cielo.",
+        destacado: true,
+        dameFuego: true,
+        stock: 7
+    },
+    {
+        id: 24,
+        name: "Con gusto a Mujer",
+        artist: "Sandro",
+        category: "Balada",
+        price: 42000,
+        image: "/img/sandro-mujer.jpg",
+        imageVinyl: "/img/sandro-mujer-vinyl.jpg",
+        description: "Un disco de su etapa más madura, con arreglos modernos para la época de los 90s pero manteniendo intacta la pasión y el romanticismo de siempre. \nTracklist destacado: 1. Con gusto a mujer, 2. Comprensión, 3. No me dejes, no mi amor, 4. Muriendo de amor.",
+        destacado: false,
+        dameFuego: true,
+        stock: 15
     }
 ]
