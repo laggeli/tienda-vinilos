@@ -1,0 +1,141 @@
+.footer {
+  margin-top: 60px;
+  border-top: 5px solid #b94f2d;
+  background-color: #201c18;
+  color: #e8decc;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 28px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.disco {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #b94f2d;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle,
+    #201c18 0,
+    #201c18 3px,
+    #594334 4px,
+    #201c18 5px
+  );
+}
+
+.disco span {
+  width: 12px;
+  height: 12px;
+  border: 3px solid #f4ead5;
+  border-radius: 50%;
+  background-color: #dba93f;
+}
+
+.logo {
+  margin: 0;
+  color: #f4ead5;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.subtitulo {
+  margin: 7px 0 0;
+  color: #d9a34a;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.descripcion {
+  max-width: 430px;
+  margin: 0;
+  color: #c9bda8;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  grid-column: 1 / -1;
+  padding-top: 25px;
+  border-top: 1px solid #594b3c;
+}
+
+.columnas h3 {
+  margin: 0 0 15px;
+  color: #e7b65a;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.columnas a {
+  display: block;
+  width: fit-content;
+  margin: 10px 0;
+  color: #e8decc;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.columnas a:hover {
+  color: #d9a34a;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pie {
+  padding: 20px 24px;
+  border-top: 1px solid #594b3c;
+  background-color: #191613;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0 0 6px;
+  color: #e8decc;
+  font-size: 0.8rem;
+}
+
+.pie small {
+  color: #a99b85;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 22px;
+  }
+
+  .columnas { gap: 18px; }
+
+  .logo { font-size: 1.8rem }
+
+  .pie { padding: 18px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .columnas a { transition: none; }
+}

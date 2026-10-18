@@ -1,8 +1,8 @@
-import AnalogRitualBanner from "../components/AnalogiaRitualBanner"
-import CommunitySection from "../components/CommunitySection"
-import FeaturedSection from "../components/FeaturedSection"
-import Footer from "../components/Footer"
-import Hero from "../components/Hero"
+import AnalogRitualBanner from "../components/analogiaRitualBanner/AnalogiaRitualBanner"
+import CommunitySection from "../components/communitySection/CommunitySection"
+import FeaturedSection from "../components/featuredSection/FeaturedSection"
+// import Footer from "../components/Footer" apenas se implemente lo sumamos
+import Hero from "../components/hero/Hero"
 
 function Home({onActualizarCarrito}) {
   return (
@@ -11,7 +11,6 @@ function Home({onActualizarCarrito}) {
       <FeaturedSection onActualizarCarrito={onActualizarCarrito}/>
       <AnalogRitualBanner/>
       <CommunitySection/>
-      <Footer/>
     </>
   )
 }

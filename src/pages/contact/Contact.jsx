@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import styles from "./Contact.module.css";
 
 export default function FormularioContacto() {
   const [formData, setFormData] = useState({
@@ -71,13 +71,14 @@ export default function FormularioContacto() {
   };
 
   return (
-    <div className="container mt-4 col-md-8 col-lg-6">
+    <div className={`container mt-4 col-md-8 col-lg-6 ${styles.formulario}`}>
       <h2 className="mb-4 text-center">Formulario de Contacto</h2>
 
       {/* Cartel de éxito tras el envío sin errores */}
       {submitted && (
-        <div className="alert alert-success alert-dismissible fade show mb-4" role="alert">
-          ¡Formulario enviado con éxito! Nos pondremos en contacto pronto.
+        <div className={`alert alert-success alert-dismissible fade show mb-4 ${styles.formText}`} role="alert">
+          ¡Formulario enviado con éxito! <br/ >
+          Nos pondremos en contacto pronto.
         </div>
       )}
 
@@ -138,7 +139,7 @@ export default function FormularioContacto() {
 
         <div className="mb-3">
           <label htmlFor="comentario" className="form-label">
-            Comentario o Pregunta (opcional)
+            Comentario o pregunta
           </label>
           <textarea
             id="comentario"
@@ -148,7 +149,7 @@ export default function FormularioContacto() {
             placeholder="Escribí tu consulta aquí..."
             value={formData.comentario}
             onChange={handleChange}
-          ></textarea>
+          > </textarea>
         </div>
         <button type="submit" className="btn btn-primary w-100 mt-2"> Enviar Formulario </button>
       </form>

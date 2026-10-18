@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router"; 
 import { Container, Row, Col, Button, Form, Offcanvas } from "react-bootstrap";
-import { productos } from "../data/products.js";
+import { productos } from "../../data/products.js";
 import styles from "./Products.module.css";
-import { agregarProducto } from "../utils/operacionesCarrito";
-import VinylCard from "../components/VinylCard.jsx"; 
-import AvisoCarrito from "../components/AvisoCarrito.jsx";
+import { agregarProducto } from "../../utils/operacionesCarrito.js";
+import VinylCard from "../../components/vinylCard/VinylCard.jsx"; 
+import AvisoCarrito from "../../components/avisoCarrito/AvisoCarrito.jsx";
 
 function Products({onActualizarCarrito}) {
   useEffect(() => { document.title = "Lado V | Catálogo"; }, []);

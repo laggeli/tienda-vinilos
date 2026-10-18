@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router"; 
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { productos } from "../data/products.js"; 
-import { agregarProducto } from "../utils/operacionesCarrito"; 
-import AvisoCarrito from "../components/AvisoCarrito.jsx"; 
-import VinylCard from "../components/VinylCard.jsx"; 
+import { productos } from "../../data/products.js"; 
+import { agregarProducto } from "../../utils/operacionesCarrito.js"; 
+import AvisoCarrito from "../../components/avisoCarrito/AvisoCarrito.jsx"; 
+import VinylCard from "../../components/vinylCard/VinylCard.jsx"; 
 import styles from "./ProductDetail.module.css";
 
 function ProductDetails({ onActualizarCarrito }) {

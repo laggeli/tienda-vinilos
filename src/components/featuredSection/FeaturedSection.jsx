@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Container, Row, Carousel as BootstrapCarousel } from 'react-bootstrap';
 import { Link } from 'react-router';
-import VinylCard from './VinylCard'; 
-import RetroCarousel from './RetroCarousel'; 
-import { productos } from '../data/products'; 
-import { agregarProducto } from "../utils/operacionesCarrito";
-import AvisoCarrito from './AvisoCarrito';
+import VinylCard from '../vinylCard/VinylCard'; 
+import RetroCarousel from '../retroCarousel/RetroCarousel'; 
+import { productos } from '../../data/products'; 
+import { agregarProducto } from "../../utils/operacionesCarrito";
+import AvisoCarrito from '../avisoCarrito/AvisoCarrito';
 import styles from './FeaturedSection.module.css';
 
 function FeaturedSection({onActualizarCarrito}) {

@@ -1,9 +1,9 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import styles from "./CarritoItem.module.css";
 import {
   cantidadTotal,
   totalPesos
-} from "../utils/operacionesCarrito";
+} from "../../utils/operacionesCarrito";
 
 function ResumenCompraCard() {
     function calcularDescuento(total) {

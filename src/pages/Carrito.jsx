@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CarritoItem from "../components/CarritoItem";
-import ResumenCompraCard from "../components/ResumenCompraCard";
+import CarritoItem from "../components/carritoItem/CarritoItem";
+import ResumenCompraCard from "../components/carritoItem/ResumenCompraCard";
 import {
   obtenerCarrito,
   incrementarCantidad,

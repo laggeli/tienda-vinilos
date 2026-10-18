@@ -1,13 +1,10 @@
 import { Navbar as BootstrapNavbar, Nav, Container, } from "react-bootstrap";
 import { NavLink, Link } from "react-router";
-import { cantidadTotal } from "../utils/operacionesCarrito";
-import CarritoIcono from "./CarritoIcono";
-import { useState, useEffect } from "react";
+import CarritoIcono from "../carritoIcono/CarritoIcono";
 import styles from "./AppNavBar.module.css";
 
 function AppNavBar({cantidadProductosEnCarrito}) {
   return (
-    
     <BootstrapNavbar expand="lg" className={styles.navbar} >
       <Container>
         <BootstrapNavbar.Brand as={Link} to="/" className={styles.logo}>
@@ -37,7 +34,7 @@ function AppNavBar({cantidadProductosEnCarrito}) {
             <Nav.Link as={NavLink} to="/carrito"
               title="Carrito" className={styles.carrito}>
               <CarritoIcono total={cantidadProductosEnCarrito} />
-              <span>Carrito</span>
+              <span> Carrito</span>
             </Nav.Link>
           </Nav>
         </BootstrapNavbar.Collapse>

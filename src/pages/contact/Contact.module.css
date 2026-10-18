@@ -1,0 +1,93 @@
+.formulario {
+  max-width: 760px;
+  margin: 42px auto;
+  padding: 34px;
+  border: 1px solid #dfd0b5;
+  border-radius: 5px;
+  background-color: #f8f0df;
+  color: #29251f;
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 8px 24px rgba(32, 28, 24, 0.07);
+}
+
+.formulario h2 {
+  margin-bottom: 28px !important;
+  color: #29251f;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+}
+
+.formText {
+    text-align: center;
+    padding: 11px 10px;
+}
+
+.formulario :global(.form-label) {
+  margin-bottom: 8px;
+  color: #473a2e;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.formulario :global(.form-control) {
+  padding: 11px 13px;
+  border: 1px solid #cbb99c;
+  border-radius: 3px;
+  background-color: #fffaf0;
+  color: #29251f;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+}
+
+.formulario :global(.form-control::placeholder) {
+  color: #958671;
+}
+
+.formulario :global(.form-control:focus) {
+  border-color: #b94f2d;
+  background-color: #fffaf0;
+  box-shadow: 0 0 0 3px rgba(185, 79, 45, 0.14);
+}
+
+.formulario :global(.is-invalid) {
+  border-color: #b94f2d;
+}
+
+.formulario :global(.invalid-feedback) {
+  margin-top: 6px;
+  color: #a13d25;
+  font-size: 0.82rem;
+}
+
+.formulario :global(.btn-primary) {
+  padding: 11px 18px;
+  border: 1px solid #b94f2d;
+  border-radius: 24px;
+  background-color: #b94f2d;
+  color: #fff8eb;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formulario :global(.btn-primary:hover) {
+  border-color: #943b22;
+  background-color: #943b22;
+  color: #fff8eb;
+  transform: translateY(-1px);
+}
+
+.formulario :global(.alert-success) {
+  border: 1px solid #a6ae8b;
+  border-radius: 3px;
+  background-color: #e7eadb;
+  color: #39452e;
+}
+
+@media (max-width: 575px) {
+  .formulario {
+    margin: 24px auto;
+    padding: 22px 17px;
+  }
+
+  .formulario h2 { font-size: 1.65rem; }
+}
