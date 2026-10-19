@@ -22,13 +22,13 @@
 }
 
 .botonEliminar {
-  background-color: var(--terracota,#b94f2d); 
+  background-color: var(--terracota, #b94f2d); 
   border: none;
-  border-radius: 25px; 
-  padding: 8px 16px;
+  border-radius: 1.5rem; 
+  padding: 0.75rem 1.25rem;
   font-weight: bold;
   font-family: 'DM Sans', sans-serif;
-  color: var(--crema-clara);
+  color: var(--crema-clara,#fbf5e9);
   transition: background-color 0.3s ease;
 }
 

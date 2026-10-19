@@ -7,6 +7,7 @@ import Products from "./pages/products/Products";
 import ProductsDetail from "./pages/productDetail/ProductDetail";
 import Contact from "./pages/contact/Contact";
 import Carrito from "./pages/carrito/Carrito";
+import Checkout from "./pages/checkout/Checkout";
 import Nosotros from "./pages/nosotros/Nosotros";
 import FrequentQuestions from "./pages/frecuentQuestions/FrequentQuestions";
 import Devolutions from "./pages/devolutions/Devolutions";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/producto/:id" element={<ProductsDetail onActualizarCarrito={actualizarTotal} />} />
           <Route path="/contacto" element={<Contact onActualizarCarrito={actualizarTotal}/>} />
           <Route path="/carrito" element={<Carrito onActualizarCarrito={actualizarTotal}/>} />
+          <Route path="/checkout" element={<Checkout onActualizarCarrito={actualizarTotal}/>} />
           <Route path="/nosotros" element={<Nosotros onActualizarCarrito={actualizarTotal} />} />
           <Route path="/preguntasFrecuentes" element={<FrequentQuestions onActualizarCarrito={actualizarTotal} />} />
           <Route path="/devoluciones" element={<Devolutions onActualizarCarrito={actualizarTotal} />} />

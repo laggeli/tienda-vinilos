@@ -1,4 +1,6 @@
 import { Card } from "react-bootstrap";
+import { Link } from "react-router"; 
+import { Button } from "react-bootstrap";
 import stylesResumen from "./ResumenCompraCard.module.css";
 import {
   cantidadTotal,
@@ -40,7 +42,7 @@ function ResumenCompraCard() {
                         <span className="text-success">-${calcularDescuento(totalPesos())}</span>
                     </div>
                     <div className="d-flex justify-content-between">
-                        <strong>Envio</strong>
+                        <strong>Envío</strong>
                         <span className="text-muted">+${calcularEnvio(totalPesos())}</span>
                     </div>
                     <div className="d-flex justify-content-between">
@@ -53,6 +55,13 @@ function ResumenCompraCard() {
                                 ${calcularTotal(totalPesos())}
                             </span>
                         </span>
+                    </div>
+                    <div>
+                        <Link to="/checkout">
+                        <Button className={stylesResumen.botonComprar}>
+                            Comprar
+                        </Button>
+                        </Link>
                     </div>
                 </div>
             </Card.Body>
