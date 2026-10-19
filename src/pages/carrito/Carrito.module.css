@@ -1,0 +1,43 @@
+.contenedorVacio {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; 
+  padding: 40px 0;
+}
+
+.carritoVacioBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.viniloVacioGif {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  animation: girarLento 10s linear infinite;
+}
+
+@keyframes girarLento {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carritoVacioBox h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  color: var(--marron, #29251f);
+  margin-bottom: 6px;
+}
+
+.carritoVacioBox p {
+  color: var(--marron-suave, #756c5c);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+}

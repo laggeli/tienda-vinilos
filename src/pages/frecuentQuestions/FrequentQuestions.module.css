@@ -1,0 +1,144 @@
+.faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 28px 60px;
+  color: #29251f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.encabezado {
+  max-width: 700px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.etiqueta {
+  color: #b94f2d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.encabezado h1 {
+  margin: 16px 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 400;
+}
+
+.encabezado p {
+  color: #594b3c;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.contenido {
+  display: grid;
+  align-items: start;
+  gap: 38px;
+}
+
+.grupo {
+  margin-bottom: 30px;
+  scroll-margin-top: 24px;
+}
+
+.grupo h2 {
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #b94f2d;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+}
+
+.pregunta { border-bottom: 1px solid #b94f2d; }
+
+.pregunta summary {
+  position: relative;
+  padding: 18px 32px 18px 2px;
+  color: #29251f;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pregunta summary::-webkit-details-marker { display: none; }
+
+.pregunta summary::after {
+  position: absolute;
+  top: 17px;
+  right: 4px;
+  color: #b94f2d;
+  content: "+";
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.pregunta[open] summary::after {
+  content: "−";
+}
+
+.pregunta summary:hover {
+  color: #b94f2d;
+}
+
+.pregunta p {
+  margin: 0;
+  padding: 0 24px 18px 2px;
+  color: #594b3c;
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.contacto {
+  margin-top: 36px;
+  padding: 32px 24px;
+  background-color: #f4ead5;
+  border: 1px solid #b94f2d;
+  text-align: center;
+}
+
+.contacto h2 {
+  margin: 0 0 12px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.contacto p {
+  margin: 0 0 20px;
+  color: #594b3c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.boton {
+  display: inline-block;
+  padding: 11px 23px;
+  border: 1px solid #b94f2d;
+  border-radius: 24px;
+  background-color: #b94f2d;
+  color: #fff8eb;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background-color: #943b22;
+  color: #fff8eb;
+}
+
+@media (max-width: 700px) {
+  .faq { padding: 32px 20px 40px; }
+
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .grupo h2 { font-size: 1.4rem; }
+}

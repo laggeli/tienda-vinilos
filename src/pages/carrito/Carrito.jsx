@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CarritoItem from "../components/carritoItem/CarritoItem";
-import ResumenCompraCard from "../components/carritoItem/ResumenCompraCard";
+import CarritoItem from "../../components/carritoItem/CarritoItem";
+import ResumenCompraCard from "../../components/carritoItem/ResumenCompraCard";
 import {
   obtenerCarrito,
   incrementarCantidad,
   restarCantidad,
   eliminarProducto
-} from "../utils/operacionesCarrito";
+} from "../../utils/operacionesCarrito";
+import styles from "./Carrito.module.css"
 
 function Carrito({onActualizarCarrito}) {
   // Se obtiene el carrito inicial desde el módulo de operaciones
@@ -36,10 +37,13 @@ function Carrito({onActualizarCarrito}) {
   }
 
   return (
-    <Container className="py-4">
-      <h2>Tu Carrito</h2>
+    <Container className={`py-4 ${styles.contenedorVacio}`}>
       {carrito.length === 0 ? (
-        <p>No hay productos en el carrito.</p>
+        <div className={styles.carritoVacioBox}>
+          <img src="/img/vinilo.png" alt="Vinilo girando" className={styles.viniloVacioGif} />
+          <h2>Tu carrito</h2>
+          <p>No hay productos en el carrito.</p>
+        </div>
         ) : (
           <Row>
             <Col md={8}>
