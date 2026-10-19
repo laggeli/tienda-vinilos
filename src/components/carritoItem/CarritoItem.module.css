@@ -1,10 +1,70 @@
 .item {
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #dfcfb3;
+  border-radius: 0;
 }
-.tituloResumenCompra {
-  text-align: left;
+
+.albumName {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--marron, #29251f);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
-.tachado {
-  text-decoration: line-through;
+
+.artistName {
+  margin-bottom: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--terracota, #756c5c);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.botonEliminar {
+  background-color: var(--terracota,#b94f2d); 
+  border: none;
+  border-radius: 25px; 
+  padding: 8px 16px;
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--crema-clara);
+  transition: background-color 0.3s ease;
+}
+
+.botonEliminar:hover {
+  background-color: var(--terracota-oscura,#943b22);; 
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #b94f2d; 
+  margin: 8px 0;
+}
+
+.botonCantidad {
+  border: 1px solid #dfcfb3;
+  border-radius: 8px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.botonCantidad:hover {    
+  border-color: var(--terracota,#b94f2d);
+  box-shadow: none;
+}
+
+.botonCantidad:focus {
+  outline: 2px solid var(--terracota,#b94f2d);
+  outline-offset: 2px;
+}
+
+.precio {
+  font-size: 1.4rem;          
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--marron, #29251f);             
+  min-width: 100px;
+  text-align: right;
 }
