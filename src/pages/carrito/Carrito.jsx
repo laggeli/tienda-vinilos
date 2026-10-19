@@ -9,6 +9,7 @@ import {
   eliminarProducto
 } from "../../utils/operacionesCarrito";
 import styles from "./Carrito.module.css"
+import itemStyles from "../../components/carritoItem/CarritoItem.module.css";
 
 function Carrito({onActualizarCarrito}) {
   // Se obtiene el carrito inicial desde el módulo de operaciones
@@ -37,7 +38,7 @@ function Carrito({onActualizarCarrito}) {
   }
 
   return (
-    <Container className={`py-4 ${styles.contenedorVacio}`}>
+    <Container className={`py-4 ${carrito.length === 0 ? styles.contenedorVacio : styles.contenedorCarrito}`}>
       {carrito.length === 0 ? (
         <div className={styles.carritoVacioBox}>
           <img src="/img/vinilo.png" alt="Vinilo girando" className={styles.viniloVacioGif} />
@@ -45,23 +46,27 @@ function Carrito({onActualizarCarrito}) {
           <p>No hay productos en el carrito.</p>
         </div>
         ) : (
-          <Row>
-            <Col md={8}>
-              {carrito.map(producto => (
-                <CarritoItem
-                  key={producto.id}
-                  producto={producto}
-                  aumentar={aumentar}
-                  disminuir={disminuir}
-                  eliminar={eliminar}
-                />
-              ))}
-            </Col>
-            {/* Totales */}
-            <Col md={4}>
-              <ResumenCompraCard />
-            </Col>
-          </Row>
+          <>
+            <h2 className={styles.carritoLleno}>Tu carrito</h2>
+            <Row>
+              <Col md={8}>
+                {carrito.map(producto => (
+                  <CarritoItem
+                    key={producto.id}
+                    producto={producto}
+                    aumentar={aumentar}
+                    disminuir={disminuir}
+                    eliminar={eliminar}
+                  />
+                ))}
+              </Col>
+              {/* Totales */}
+              <Col md={4}>
+                <ResumenCompraCard />
+              </Col>
+            </Row>
+          </>
+          
       )}
     </Container>
   );

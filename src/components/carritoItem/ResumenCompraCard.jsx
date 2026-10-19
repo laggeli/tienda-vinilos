@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import styles from "./CarritoItem.module.css";
+import stylesResumen from "./ResumenCompraCard.module.css";
 import {
   cantidadTotal,
   totalPesos
@@ -26,10 +26,10 @@ function ResumenCompraCard() {
 
   return (
     <div>
-        <Card className={`mb-3 ${styles.item}`}>
+        <Card className={`mb-3 ${stylesResumen.item}`}>
             <Card.Body className="text-center">
-                <div>
-                    <h4 className={styles.tituloResumenCompra}>Resumen de compra</h4>
+                <div className={stylesResumen.textoResumenCompra}>
+                    <h4 className={stylesResumen.tituloResumenCompra}>Resumen de compra</h4>
                     <hr />
                     <div className="d-flex justify-content-between">
                         <strong>Productos ({cantidadTotal()})</strong>
@@ -46,7 +46,7 @@ function ResumenCompraCard() {
                     <div className="d-flex justify-content-between">
                         <strong>Total</strong>
                         <span>
-                            <span className={`text-muted ${styles.tachado} fs-6`}>
+                            <span className={`text-muted ${stylesResumen.tachado} fs-6`}>
                                 ${calcularTotalMasEnvio(totalPesos())}
                             </span>{" "}
                             <span className="fw-bold fs-5">

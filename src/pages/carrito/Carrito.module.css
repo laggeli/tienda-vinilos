@@ -5,6 +5,7 @@
   align-items: center;
   min-height: 80vh; 
   padding: 40px 0;
+  margin-bottom: 4rem;
 }
 
 .carritoVacioBox {
@@ -40,4 +41,11 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
   margin: 0;
+}
+
+.carritoLleno h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 3rem;
+  color: var(--marron, #29251f);
+  margin-bottom: 6px;
 }
