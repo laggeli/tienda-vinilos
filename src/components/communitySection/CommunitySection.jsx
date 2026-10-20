@@ -30,8 +30,8 @@ export default function CommunitySection() {
                 <li><span className={styles.icon}>📀</span> Contenido musical curado</li>
                 <li><span className={styles.icon}>🏷️</span> Descuentos especiales para miembros</li>
               </ul>
-
-              <Link to="/contacto" className={styles.ctaButton}>
+              
+              <Link to="/nosotros#comunidad-form" className={styles.ctaButton}>
                 UNIRME AL CLUB DE VINILOS →
               </Link>
             </div>

@@ -29,6 +29,10 @@ function AppNavBar({ cantidadProductosEnCarrito }) {
               Vinilos
             </Nav.Link>
 
+            <Nav.Link as={NavLink} to="/Nosotros" className={styles.navLink} >
+              Nosotros
+            </Nav.Link>
+
             <Nav.Link as={NavLink} to="/contacto" className={styles.navLink} >
               Contacto
             </Nav.Link>
