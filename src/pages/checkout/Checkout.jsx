@@ -5,20 +5,23 @@ import MediosDePagoCard from "../../components/checkoutSection/MediosDePagoCard"
 import FacturacionCard from "../../components/checkoutSection/FacturacionCard";
 import ResumenCompraCard from "../../components/carritoItem/ResumenCompraCard";
 import CompraExitosaModal from "../../components/resultadoPago/CompraExitosaModal";
-import { cantidadTotal, totalPesos } from "../../utils/operacionesCarrito";
+import { cantidadTotal, totalPesos, obtenerCarrito } from "../../utils/operacionesCarrito";
 import styles from "./Checkout.module.css";
 import stylesAcordeon from "../../components/acordeonCustom/AcordeonCustomStyles.module.css";
 
 function Checkout() {
   const [showModal, setShowModal] = useState(false);
   const [metodoEnvio, setMetodoEnvio] = useState("envio");
+  
+  const [carrito, setCarrito] = useState(obtenerCarrito());
+  
   const mostrarGratis = totalPesos() >= 100000;  
 
   const costoEnvio = totalPesos() * 0.05;
   const resumen = {
     productos: cantidadTotal(),
     total: totalPesos(),
-    descuento: totalPesos() * 0.1,
+    descuento: totalPesos() * 0.1, 
     envio: mostrarGratis ? 0 : costoEnvio,
     totalFinal: totalPesos() - (totalPesos() * 0.1) + (mostrarGratis ? 0 : costoEnvio),
     mostrarGratis
@@ -33,7 +36,6 @@ function Checkout() {
                 alwaysOpen
                 className={`${stylesAcordeon.accordionBase} ${stylesAcordeon.accordionCrema}`}
                 >
-
                     <Accordion.Item eventKey="0" className={stylesAcordeon.item}>
                         <Accordion.Header className="custom-accordion-header">Forma de entrega</Accordion.Header>
                         <Accordion.Body className="custom-accordion-body">
@@ -54,18 +56,18 @@ function Checkout() {
                     </Accordion.Item>
                 </Accordion>
             </Col>
+            
             {/* Totales */}
             <Col md={4}>
                 <ResumenCompraCard 
+                // 3. Le pasamos los productos a la tarjeta
+                carrito={carrito} 
                 botonTexto="Pagar" 
-                // onBotonClick={() => {
-                //     alert("Procesando pago...");
-                // }}
                 onBotonClick={() => setShowModal(true)} 
                 />
-
             </Col>
         </Row>
+        
         <CompraExitosaModal 
             show={showModal} 
             onClose={() => setShowModal(false)} 

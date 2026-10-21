@@ -4,7 +4,6 @@
   padding-top: 2rem;
 }
 
-/* Migas de pan (Breadcrumbs) - Adiós al color azul por defecto */
 .breadcrumb {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
@@ -26,7 +25,6 @@
   color: var(--marron-suave, #756c5c);
 }
 
-/* Contenedor estricto para evitar que la imagen sea gigante */
 .coverWrapper {
   display: flex;
   justify-content: center;
@@ -36,7 +34,7 @@
 
 .coverContainer {
   position: relative;
-  max-width: 480px; /* Límite estricto de tamaño */
+  max-width: 480px; 
   width: 100%;
 }
 
@@ -44,14 +42,12 @@
   width: 100%;
   height: auto;
   border-radius: 4px;
-  /* Sombras para dar efecto de relieve 3D sobre la mesa */
   box-shadow: 12px 12px 30px rgba(41, 37, 31, 0.2),
               0 0 0 1px rgba(0,0,0,0.05); 
   object-fit: cover;
-  aspect-ratio: 1 / 1; /* Fuerza a que sea un cuadrado perfecto aunque la foto original no lo sea */
+  aspect-ratio: 1 / 1; 
 }
 
-/* Efecto sutil de celofán */
 .coverGlare {
   position: absolute;
   top: 0;
@@ -63,12 +59,12 @@
   border-radius: 4px;
 }
 
-/* Columna de Textos Alineada a la Izquierda */
+
 .infoContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 3rem; /* Espacio para que no se pegue al disco */
+  padding-left: 3rem; 
   text-align: left;
 }
 
@@ -136,7 +132,7 @@
   border-top: 1px solid var(--borde, #dfcfb3);
 }
 
-/* Botón de Agregar - Estilo Botón Físico Retro */
+
 .btnAgregar {
   background-color: var(--terracota, #b94f2d);
   color: #fff;
@@ -171,7 +167,6 @@
   cursor: not-allowed;
 }
 
-/* Sugeridos */
 .suggestedSection {
   margin-top: 6rem;
   padding-top: 4rem;

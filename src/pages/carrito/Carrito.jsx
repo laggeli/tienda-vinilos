@@ -61,7 +61,7 @@ function Carrito({onActualizarCarrito}) {
               </Col>
               {/* Totales */}
               <Col md={4}>
-                <ResumenCompraCard />
+                <ResumenCompraCard carrito={carrito}/>
               </Col>
             </Row>
           </>

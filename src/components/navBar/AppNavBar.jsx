@@ -5,7 +5,7 @@ import styles from "./AppNavBar.module.css";
 
 function AppNavBar({ cantidadProductosEnCarrito }) {
   return (
-    <BootstrapNavbar expand="lg" className={styles.navbar}>
+    <BootstrapNavbar sticky="top" expand="lg" className={styles.navbar}>
       <Container>
         <BootstrapNavbar.Brand as={Link} to="/" className={styles.logo} >
           <span className={styles.logoDisco} aria-hidden="true"> <span /> </span>

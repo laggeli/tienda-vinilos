@@ -6,8 +6,11 @@ import { cantidadTotal, totalPesos, obtenerEnvio } from "../../utils/operaciones
 import { CUPONES_VALIDOS } from "../../utils/cupones";
 
 function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
-    const [codigoInput, setCodigoInput] = useState("");
-    const [cuponActivo, setCuponActivo] = useState(null); 
+
+
+    const cuponGuardado = localStorage.getItem("cuponActivo") || null;
+    const [codigoInput, setCodigoInput] = useState(cuponGuardado || "");
+    const [cuponActivo, setCuponActivo] = useState(() => localStorage.getItem("cuponActivo") || null); 
     const [mensajeCupon, setMensajeCupon] = useState("");
 
     const total = totalPesos();
@@ -29,9 +32,11 @@ function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick,
         
         if (CUPONES_VALIDOS[codigo]) {
             setCuponActivo(codigo);
+            localStorage.setItem("cuponActivo", codigo);
             setMensajeCupon(CUPONES_VALIDOS[codigo].mensaje);
         } else {
             setCuponActivo(null);
+            localStorage.removeItem("cuponActivo");
             setMensajeCupon("Código inválido o expirado.");
         }
     };
@@ -39,6 +44,7 @@ function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick,
     useEffect(() => {
         if (carrito.length === 0) {
             setCuponActivo(null);
+            localStorage.removeItem("cuponActivo");
             setCodigoInput("");
             setMensajeCupon("");
         }

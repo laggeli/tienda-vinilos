@@ -9,7 +9,7 @@ export const CUPONES_VALIDOS = {
   "ROCK20": {
     mensaje: "¡20% OFF en todos los vinilos de Rock!",
     calcularDescuento: (carrito) => {
-      const subtotalRock = carrito.reduce((acc, item) => item.category === "Rock" ? acc + (item.price * item.cantidad) : acc, 0);
+      const subtotalRock = carrito.reduce((acc, item) => item.category == "Rock" ? acc + (item.price * item.cantidad) : acc, 0);
       return subtotalRock * 0.20;
     }
   },
