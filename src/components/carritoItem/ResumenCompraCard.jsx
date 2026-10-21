@@ -4,20 +4,20 @@ import { Button } from "react-bootstrap";
 import stylesResumen from "./ResumenCompraCard.module.css";
 import {
   cantidadTotal,
-  totalPesos
+  totalPesos,
+  obtenerEnvio
 } from "../../utils/operacionesCarrito";
 
 function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
     const total = totalPesos();
     const mostrarGratis = total >= 100000;
-    const costoEnvio = total * 0.05;
+    const costoEnvio = obtenerEnvio();
     function calcularDescuento(total) {
         // Ejemplo: 10% de descuento
         return total * 0.1;
     }
 
-    function calcularEnvio(total) {
-        // Ejemplo: 5% de costo de envío
+    function calcularEnvio() {
         return mostrarGratis ? 0 : costoEnvio;
     }
 
@@ -26,7 +26,7 @@ function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "
     }
 
     function calcularTotal(total) {
-        return total - calcularDescuento(total) + calcularEnvio(total);
+        return total - calcularDescuento(total) + calcularEnvio();
     }
 
   return (
@@ -47,7 +47,7 @@ function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "
                     <div className="d-flex justify-content-between">
                         <strong>Envío</strong>
                         <span className="text-muted">
-                            {mostrarGratis ? "Gratis" : `+$${calcularEnvio(total)}`}
+                            {mostrarGratis ? "Gratis" : `+$${calcularEnvio()}`}
                         </span>
                     </div>
                     <div className="d-flex justify-content-between">

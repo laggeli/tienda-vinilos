@@ -41,3 +41,15 @@ export function totalPesos() {
     0
   );
 }
+
+export function obtenerEnvio() {
+  if (carrito.length === 0) return 0;
+  // Busco el producto más barato y lo guardo en masBarato
+  const masBarato = carrito.reduce((min, item) =>
+    item.price < min.price ? item : min
+  );
+
+  // Ejemplo de cálculo: 5% del precio del más barato
+  const porcentajeEnvio = 0.05;
+  return masBarato.price * porcentajeEnvio;
+}
