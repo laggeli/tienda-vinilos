@@ -1,33 +1,46 @@
-import { Card } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Card, Button, Form, InputGroup } from "react-bootstrap";
 import { Link } from "react-router"; 
-import { Button } from "react-bootstrap";
 import stylesResumen from "./ResumenCompraCard.module.css";
-import {
-  cantidadTotal,
-  totalPesos
-} from "../../utils/operacionesCarrito";
+import { cantidadTotal, totalPesos } from "../../utils/operacionesCarrito";
+import { CUPONES_VALIDOS } from "../../utils/cupones";
 
-function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
+function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
+    const [codigoInput, setCodigoInput] = useState("");
+    const [cuponActivo, setCuponActivo] = useState(null); 
+    const [mensajeCupon, setMensajeCupon] = useState("");
+
     const total = totalPesos();
     const mostrarGratis = total >= 100000;
-    const costoEnvio = total * 0.05;
-    function calcularDescuento(total) {
-        // Ejemplo: 10% de descuento
-        return total * 0.1;
+    const costoEnvio = mostrarGratis ? 0 : total * 0.05;
+
+    let montoDescuento = 0;
+    if (cuponActivo && CUPONES_VALIDOS[cuponActivo]) {
+        montoDescuento = CUPONES_VALIDOS[cuponActivo].calcularDescuento(carrito);
     }
 
-    function calcularEnvio(total) {
-        // Ejemplo: 5% de costo de envío
-        return mostrarGratis ? 0 : costoEnvio;
-    }
+    const totalFinal = total - montoDescuento + costoEnvio;
+    const totalSinDescuento = total + costoEnvio;
 
-    function calcularTotalMasEnvio(total) {
-        return total + calcularEnvio(total);
-    }
+    const aplicarCupon = () => {
+        const codigo = codigoInput.trim().toUpperCase();
+        
+        if (CUPONES_VALIDOS[codigo]) {
+            setCuponActivo(codigo);
+            setMensajeCupon(CUPONES_VALIDOS[codigo].mensaje);
+        } else {
+            setCuponActivo(null);
+            setMensajeCupon("Código inválido o expirado.");
+        }
+    };
 
-    function calcularTotal(total) {
-        return total - calcularDescuento(total) + calcularEnvio(total);
-    }
+    useEffect(() => {
+        if (carrito.length === 0) {
+            setCuponActivo(null);
+            setCodigoInput("");
+            setMensajeCupon("");
+        }
+    }, [carrito.length]);
 
   return (
     <div>
@@ -36,42 +49,86 @@ function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "
                 <div className={stylesResumen.textoResumenCompra}>
                     <h4 className={stylesResumen.tituloResumenCompra}>Resumen de compra</h4>
                     <hr />
-                    <div className="d-flex justify-content-between">
+                    
+                    <div className="d-flex justify-content-between mb-2">
                         <strong>Productos ({cantidadTotal()})</strong>
                         <span>${total}</span>
                     </div>
-                    <div className="d-flex justify-content-between">
-                        <strong>Descuento</strong>
-                        <span className="text-success">-${calcularDescuento(total)}</span>
+
+                    <div className="text-start my-3 p-3 border rounded" style={{ backgroundColor: "#fdf8ef", borderColor: "#dfcfb3" }}>
+                        <Form.Label className="small fw-bold mb-1 text-uppercase" style={{ letterSpacing: "1px", color: "#29251f" }}>
+                            Código de descuento
+                        </Form.Label>
+                        <InputGroup size="sm">
+                            <Form.Control 
+                                placeholder="Ingresá tu código"
+                                value={codigoInput}
+                                onChange={(e) => setCodigoInput(e.target.value.toUpperCase())}
+                            />
+                            <Button variant="dark" onClick={aplicarCupon} style={{ backgroundColor: "#29251f" }}>
+                                Aplicar
+                            </Button>
+                        </InputGroup>
+                        
+                        {mensajeCupon && (
+                            <div className={`small mt-2 fw-bold ${cuponActivo ? "text-success" : "text-danger"}`}>
+                                {mensajeCupon}
+                            </div>
+                        )}
+
+                        {cuponActivo && montoDescuento === 0 && (
+                            <div className="small mt-1 text-warning fw-bold">
+                                * Este cupón no aplica a los productos que tenés en el carrito.
+                            </div>
+                        )}
                     </div>
-                    <div className="d-flex justify-content-between">
+                    
+                    {montoDescuento > 0 && (
+                        <div className="d-flex justify-content-between mb-2">
+                            <strong>Descuento cupón</strong>
+                            <span className="text-success">-${montoDescuento}</span>
+                        </div>
+                    )}
+                    
+                    <div className="d-flex justify-content-between mb-3">
                         <strong>Envío</strong>
                         <span className="text-muted">
-                            {mostrarGratis ? "Gratis" : `+$${calcularEnvio(total)}`}
+                            {mostrarGratis ? "Gratis" : `+$${costoEnvio}`}
                         </span>
                     </div>
-                    <div className="d-flex justify-content-between">
-                        <strong>Total</strong>
-                        <span>
-                            <span className={`text-muted ${stylesResumen.tachado} fs-6`}>
-                                ${calcularTotalMasEnvio(total)}
-                            </span>{" "}
-                            <span className="fw-bold fs-5">
-                                ${calcularTotal(total)}
+                    
+                    <hr />
+                    
+                    <div className="d-flex justify-content-between align-items-center mb-4">
+                        <strong className="fs-5">Total</strong>
+                        <div className="text-end">
+                            {montoDescuento > 0 && (
+                                <span className={`text-muted text-decoration-line-through fs-6 me-2`}>
+                                    ${totalSinDescuento}
+                                </span>
+                            )}
+                            <span className="fw-bold fs-4" style={{ color: "#c71f25" }}>
+                                ${totalFinal}
                             </span>
-                        </span>
+                        </div>
                     </div>
-                    <div>
+                    
+                    <div className="mt-4">
                         {onBotonClick ? (
-                            <Button className={stylesResumen.botonComprar} onClick={onBotonClick}>
-                            {botonTexto}
+                            <Button 
+                                className={`${stylesResumen.botonComprar} w-100`} 
+                                onClick={onBotonClick}
+                            >
+                                {botonTexto}
                             </Button>
                         ) : (
-                        <Link to={botonLink}>
-                        <Button className={stylesResumen.botonComprar}>
-                            {botonTexto}
-                        </Button>
-                        </Link>
+                            <Button 
+                                as={Link} 
+                                to={botonLink} 
+                                className={`${stylesResumen.botonComprar} w-100`}
+                            >
+                                {botonTexto}
+                            </Button>
                         )}
                     </div>
                 </div>
