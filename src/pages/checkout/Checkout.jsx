@@ -13,12 +13,13 @@ function Checkout() {
   const [metodoEnvio, setMetodoEnvio] = useState("envio");
   const mostrarGratis = totalPesos() >= 100000;  
 
+  const costoEnvio = totalPesos() * 0.05;
   const resumen = {
     productos: cantidadTotal(),
     total: totalPesos(),
     descuento: totalPesos() * 0.1,
-    envio: mostrarGratis ? 0 : totalPesos() * 0.05,
-    totalFinal: totalPesos() - (totalPesos() * 0.1) + (mostrarGratis ? 0 : totalPesos() * 0.05),
+    envio: mostrarGratis ? 0 : costoEnvio,
+    totalFinal: totalPesos() - (totalPesos() * 0.1) + (mostrarGratis ? 0 : costoEnvio),
     mostrarGratis
   };
 
