@@ -5,7 +5,7 @@
 ## Descripción del Proyecto
 **Lado V** es una aplicación web desarrollada en React que simula una tienda e-commerce de vinilos de música. Los usuarios pueden explorar el catálogo de productos, buscar y filtrar discos por categoría, precio o disponibilidad, consultar el detalle de cada vinilo, agregarlos a un carrito interactivo con persistencia local y simular la confirmación de la compra.
 
-**Link del proyecto:** [Visitar Página](https://tienda-vinilos-tau.vercel.app/)
+**Link del proyecto en Vercel:** [Visitar Página](https://tienda-vinilos-tau.vercel.app/)
 
 ---
 
@@ -60,5 +60,8 @@ Para clonar y ejecutar el proyecto en una máquina local:
 | :---: | :---: | :---: |
 | <img src="assets/vinilos-pc-1.png" width="450" title="Vista Desktop 1"> | <img src="assets/vinilos-tablet-1.jpeg" width="250" title="Vista Tablet 1"> | <img src="assets/vinilos-phone-1.jpeg" width="150" title="Vista Mobile 1"> |
 | <img src="assets/vinilos-pc-2.png" width="450" title="Vista Desktop 2"> | <img src="assets/vinilos-tablet-2.jpeg" width="250" title="Vista Tablet 2"> | <img src="assets/vinilos-phone-2.jpeg" width="150" title="Vista Mobile 2"> |
-| | <img src="assets/vinilos-tablet-3.jpeg" width="250" title="Vista Tablet 3"> | |
-| | <img src="assets/vinilos-tablet-4.jpeg" width="250" title="Vista Tablet 4"> | |
+| <img src="assets/vinilos-pc-3.png" width="450" title="Vista Desktop 3"> | <img src="assets/vinilos-tablet-3.jpeg" width="250" title="Vista Tablet 3"> | <img src="assets/vinilos-phone-3.jpeg" width="150" title="Vista Mobile 3"> |
+| <img src="assets/vinilos-pc-4.png" width="450" title="Vista Desktop 4"> | <img src="assets/vinilos-tablet-4.jpeg" width="250" title="Vista Tablet 4"> | <img src="assets/vinilos-phone-4.jpeg" width="150" title="Vista Mobile 4"> |
+| <img src="assets/vinilos-pc-5.png" width="450" title="Vista Desktop 5"> | <img src="assets/vinilos-tablet-5.jpeg" width="250" title="Vista Tablet 5"> | <img src="assets/vinilos-phone-5.jpeg" width="150" title="Vista Mobile 5"> |
+| <img src="assets/vinilos-pc-6.png" width="450" title="Vista Desktop 6"> | <img src="assets/vinilos-tablet-6.jpeg" width="250" title="Vista Tablet 6"> | <img src="assets/vinilos-phone-6.jpeg" width="150" title="Vista Mobile 6"> |
+| <img src="assets/vinilos-pc-7.png" width="450" title="Vista Desktop 7"> | <img src="assets/vinilos-tablet-7.jpeg" width="250" title="Vista Tablet 7"> | <img src="assets/vinilos-phone-7.jpeg" width="150" title="Vista Mobile 7"> |
