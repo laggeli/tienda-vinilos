@@ -1,0 +1,19 @@
+.puntosPago {
+  display: flex;
+  flex-wrap: wrap;   /* permite que se apilen */
+  gap: 1rem;
+}
+
+.puntosPago > div {
+  flex: 1;           /* cada opción ocupa el mismo ancho */
+  min-width: 140px;  /* ancho mínimo para que no se achiquen demasiado */
+}
+@media (max-width: 768px) {
+  .puntosPago {
+    flex-direction: column; /* apila verticalmente */
+  }
+
+  .puntosPago > div {
+    width: 100%; /* cada opción ocupa todo el ancho */
+  }
+}

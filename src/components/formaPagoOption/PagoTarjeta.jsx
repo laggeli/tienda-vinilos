@@ -1,5 +1,6 @@
 import { Form } from "react-bootstrap";
 import { useState } from "react";
+import styles from "./PagoTarjeta.module.css"
 import stylesErrores from "../../pages/checkout/Checkout.module.css";
 
 function PagoTarjeta() {
@@ -44,7 +45,7 @@ function PagoTarjeta() {
   };
   return (
     <div>
-        <div className="d-flex gap-3">
+        <div className={`d-flex gap-3 ${styles.checkMedios}`}>
         <Form.Check
           type="checkbox"
           label="Débito"

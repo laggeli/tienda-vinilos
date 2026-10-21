@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap";
 import { useState } from "react";
-
+import styles from "./PagoEfectivo.module.css"
 function PagoEfectivo() {
   const [medioSeleccionado, setMedioSeleccionado] = useState("");
   const [puntoPago, setPuntoPago] = useState("");
@@ -8,7 +8,7 @@ function PagoEfectivo() {
     <div>
         <div className="mt-3">
           <h6>Seleccioná el punto de pago</h6>
-          <div className="d-flex gap-3">
+          <div className={`d-flex gap-3 ${styles.puntosPago}`}>
             <Form.Check
               type="radio"
               name="puntoPago"

@@ -59,7 +59,7 @@
 
 .titulo {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: 2rem;
   color: var(--marron, #29251f);
   line-height: 1.1;
   margin-top:1.5rem;
@@ -69,20 +69,32 @@
 .opciones {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .opcion {
+  display: flex;
+  justify-content: space-between; /* texto a la izquierda, gratis a la derecha */
+  align-items: center;
   flex: 1;
-  padding: 0.75rem 1.25rem;
   border-radius: 1.5rem; 
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid var(--terracota);
   margin-bottom: 1rem;
+  min-width: auto;
 }
 
+.gratis {
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  color: rgb(1, 41, 1);
+}
 .activo {
   background-color: var(--terracota);
   color: var(--crema-clara);
@@ -94,12 +106,12 @@
   color: var(--terracota);
 }
 
-.gratis {
+/* .gratis {
   display: block;
   font-size: 0.85rem;
   color: var(--verde);
   margin-top: 0.25rem;
-}
+} */
 
 .textoIngresado:focus {
   border-color: var(--terracota);
