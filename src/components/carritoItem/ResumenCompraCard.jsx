@@ -10,7 +10,7 @@ import {
 function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
     const total = totalPesos();
     const mostrarGratis = total >= 100000;
-
+    const costoEnvio = total * 0.05;
     function calcularDescuento(total) {
         // Ejemplo: 10% de descuento
         return total * 0.1;
@@ -18,7 +18,7 @@ function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "
 
     function calcularEnvio(total) {
         // Ejemplo: 5% de costo de envío
-        return total * 0.05;
+        return mostrarGratis ? 0 : costoEnvio;
     }
 
     function calcularTotalMasEnvio(total) {
