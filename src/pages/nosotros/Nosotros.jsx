@@ -175,7 +175,7 @@ function Nosotros() {
           Explorá el catálogo y encontrá ese vinilo que
           todavía tiene un lugar en tu colección.
         </p>
-        <NavLink to="/contacto" className={styles.boton}> Explorar vinilos </NavLink>
+        <NavLink to="/productos" className={styles.boton}> Explorar vinilos </NavLink>
       </section>
     </main>
   );
