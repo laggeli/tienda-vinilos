@@ -1,0 +1,89 @@
+.promoSection {
+  background-color: var(--naranja, #de5d22); 
+  padding: 6rem 0;
+  color: var(--marron, #29251f); 
+  border-top: 4px solid var(--marron, #29251f);
+  border-bottom: 4px solid var(--marron, #29251f);
+  overflow: hidden;
+}
+
+.textContainer {
+  padding-right: 2rem;
+}
+
+.badgeRetro {
+  display: inline-block;
+  background-color: var(--marron, #29251f);
+  color: var(--crema, #f4ebd0);
+  padding: 0.4rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50px;
+}
+
+.tituloPromo {
+  font-family: 'Caprasimo', serif;
+  color: var(--marron, #29251f);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.cuponBox {
+  background-color: var(--crema, #f4ebd0); 
+  border: 3px dashed var(--marron, #29251f);
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  max-width: 400px;
+  transform: rotate(-2deg); 
+}
+
+.codigoDescuento {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #c71f25;
+  letter-spacing: 3px;
+}
+
+.btnRetro {
+  background-color: var(--marron, #29251f) !important;
+  color: var(--crema, #f4ebd0) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid var(--marron, #29251f) !important;
+  padding: 1rem 2.5rem;
+  border-radius: 0; 
+  transition: all 0.2s ease;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.4) !important;
+  letter-spacing: 1px;
+}
+
+.btnRetro:hover, .btnRetro:focus {
+  transform: translate(3px, 3px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+.imageWrapper {
+  position: relative;
+  padding: 1rem;
+}
+
+.imagenSandro {
+  width: 100%;
+  height: auto;
+  border: 4px solid var(--marron, #29251f);
+  box-shadow: 15px 15px 0px var(--marron, #29251f);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagenSandro:hover {
+  transform: scale(1.02);
+}

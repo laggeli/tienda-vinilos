@@ -2,6 +2,7 @@ import AnalogRitualBanner from "../components/analogiaRitualBanner/AnalogiaRitua
 import CommunitySection from "../components/communitySection/CommunitySection"
 import FeaturedSection from "../components/featuredSection/FeaturedSection"
 import Hero from "../components/hero/Hero"
+import SandroPromoBanner from "../components/sandroPromoBanner/SandroPromoBanner"
 
 function Home({onActualizarCarrito}) {
   return (
@@ -10,6 +11,7 @@ function Home({onActualizarCarrito}) {
       <FeaturedSection onActualizarCarrito={onActualizarCarrito}/>
       <AnalogRitualBanner/>
       <CommunitySection/>
+      <SandroPromoBanner/>
     </>
   )
 }
