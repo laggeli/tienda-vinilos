@@ -1,7 +1,7 @@
 import { Card, Form } from "react-bootstrap";
 import { useState } from "react";
 import stylesFormulario from "../../pages/contact/Contact.module.css";
-import stylesErrores from "../../pages/checkout/Checkout.module.css";
+import styles from "../../pages/checkout/Checkout.module.css";
 
 function FacturacionCard() {
   const [error, setError] = useState({});
@@ -28,7 +28,6 @@ function FacturacionCard() {
       }
   };
 
-
   const guardarDatos = (e) => {
       const {name, value} = e.target;
       setDatosFacturacion({
@@ -52,7 +51,7 @@ function FacturacionCard() {
   };
   
   return (
-    <Card className={stylesErrores.item}>
+    <Card className={styles.itemFacturacion}>
       <Card.Body>
         <h5 className={stylesFormulario.subtitulo}>Datos de facturación</h5>
         
@@ -73,11 +72,10 @@ function FacturacionCard() {
               placeholder="Ej. 20123456789" 
               value={datosFacturacion.dniCuit}
               onChange={handleChange}
-              className={`${stylesErrores.textoIngresado} 
-                ${error.dniCuit ? stylesErrores.errorInput : ""}`}
+              className={`form-control ${error.dniCuit ? styles.errorInput : ""}`}
             />
             {error.dniCuit && (
-              <div className={stylesErrores.errorMsg}>{error.dniCuit}</div>
+              <div className={styles.errorMsg}>{error.dniCuit}</div>
             )}
           </Form.Group>
 
@@ -101,11 +99,10 @@ function FacturacionCard() {
                 value={datosFacturacion.nombreYApellido}
                 placeholder="Ej. María Pérez"
                 onChange={handleChange}
-                className={`${stylesErrores.textoIngresado} 
-                ${ error.nombreYApellido ? stylesErrores.errorInput : ""}`}
+                className={`form-control ${error.nombreYApellido ? styles.errorInput : ""}`}
               />
               {error.nombreYApellido && (
-                <div className={stylesErrores.errorMsg}>{error.nombreYApellido}</div>
+                <div className={styles.errorMsg}>{error.nombreYApellido}</div>
               )}
             </Form.Group>
           )}

@@ -1,0 +1,122 @@
+/* Variables de paleta de colores*/
+.accordionBase {
+  --crema: #f4ead5;
+  --crema-clara: #fbf5e9;
+  --terracota: #b94f2d;
+  --terracota-oscura: #943b22;
+  --marron: #29251f;
+  --marron-suave: #756c5c;
+  --borde: #dfcfb3;
+  --verde: #65734e;
+
+  /* Estilos del contenedor principal */
+  border: 1px solid var(--borde);
+  overflow: hidden; 
+  background-color: var(--crema-clara);
+}
+
+/* Borde superior o total de color crema) */
+.accordionCrema {
+  border: 1px solid var(--borde)
+}
+
+
+/* Items del acordeon */
+.item {
+  border-bottom: 1px solid var(--borde);
+  background-color: transparent;
+}
+
+.item:last-child {
+  border-bottom: none; 
+}
+
+
+/* Cabecera y botón */
+.item :global(.custom-accordion-header) button {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: var(--crema); /* Fondo crema para el botón cerrado */
+  color: var(--marron);           /* Texto oscuro legible */
+  font-weight: 600;
+  font-size: 1.35rem;
+  border: none;         
+  outline: none;        
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Efecto Hover en el botón */
+.item :global(.custom-accordion-header) button:hover {
+  background-color: var(--crema-clara);
+  color: var(--terracota); /* El texto cambia a terracota al pasar el mouse */
+}
+ /* Se quita el remarcado por defecto y se le da borde terracota */
+.item :global(.custom-accordion-header) button:focus {
+  box-shadow: 0 0 0 2px var(--terracota); 
+  border-color: var(--terracota);         
+  outline: none;
+}
+
+/* Modificación de títulos si se usa la variante .accordionCrema */
+.accordionCrema .item :global(.custom-accordion-header) button {
+  color: var(--borde); /* Títulos en color verde */
+}
+
+/* Cambio del estilo del botón si está abierto (React Bootstrap le añade la clase .collapsed cuando está CERRADO, si no la tiene, está ABIERTO) */
+.item :global(.custom-accordion-header) button:not(.collapsed) {
+  background-color: var(--crema-clara);
+  color: var(--terracota-oscura); /* Resalta el ítem activo en terracota oscuro */
+  border-bottom: 1px solid var(--borde);
+}
+
+
+/* Body del desplegable con fondo blanco */
+.item :global(.custom-accordion-body) {
+  padding: 1.5rem;
+  /* background-color: var(--crema-clara); */
+  background-color: #ffffff;
+  color: var(--marron-suave);
+}
+
+/* Modificación de flecha */
+
+/* Se oculta el icono original azul de Bootstrap */
+.item :global(.custom-accordion-header) button::after {
+  display: none !important;
+}
+
+/* Se crea la flecha con un pseudo-elemento */
+.item :global(.custom-accordion-header) button::before {
+  content: '→'; /* Puedes usar un carácter, un SVG o un icono aquí */
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--marron-suave); /* Color inicial de la flecha */
+  transform: rotate(270deg);   /* Apunta hacia abajo por defecto */
+  transition: transform 0.25s ease, color 0.25s ease;
+  order: 2;                   /* La empuja hacia el extremo derecho */
+}
+
+/* Estilo de la flecha al pasar el mouse por el botón (Hover) */
+.item :global(.custom-accordion-header) button:hover::before {
+  color: var(--terracota);
+}
+
+/* Estilo de la flecha cuando el Acordeón está ABIERTO */
+.item :global(.custom-accordion-header) button:not(.collapsed)::before {
+  color: var(--terracota-oscura);
+  transform: rotate(90deg); /* Rota hacia arriba suavemente al abrir */
+}
+
+/* Al usar la variante .accordionCrema, la flecha hereda el color crema */
+.accordionCrema .item :global(.custom-accordion-header) button::before {
+  color: var(--borde);
+}
+.accordionCrema .item :global(.custom-accordion-header) button:not(.collapsed)::before {
+  color: var(--marron); 
+}

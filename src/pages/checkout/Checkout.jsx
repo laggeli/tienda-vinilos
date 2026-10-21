@@ -7,6 +7,7 @@ import ResumenCompraCard from "../../components/carritoItem/ResumenCompraCard";
 import CompraExitosaModal from "../../components/resultadoPago/CompraExitosaModal";
 import { cantidadTotal, totalPesos } from "../../utils/operacionesCarrito";
 import styles from "./Checkout.module.css";
+import stylesAcordeon from "../../components/acordeonCustom/AcordeonCustomStyles.module.css";
 
 function Checkout() {
   const [showModal, setShowModal] = useState(false);
@@ -30,24 +31,24 @@ function Checkout() {
             <Col md={8}>
                 <Accordion 
                 alwaysOpen
-                className={`${styles.accordionBase} ${styles.accordionVerde}`}
+                className={`${stylesAcordeon.accordionBase} ${stylesAcordeon.accordionCrema}`}
                 >
 
-                    <Accordion.Item eventKey="0" className={styles.item}>
-                        <Accordion.Header>Forma de entrega</Accordion.Header>
-                        <Accordion.Body>
+                    <Accordion.Item eventKey="0" className={stylesAcordeon.item}>
+                        <Accordion.Header className="custom-accordion-header">Forma de entrega</Accordion.Header>
+                        <Accordion.Body className="custom-accordion-body">
                             <EnvioCard total={resumen.total} tipoEnvioCambia={setMetodoEnvio} />
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="1" >
-                        <Accordion.Header>Medios de pago</Accordion.Header>
-                        <Accordion.Body>
+                    <Accordion.Item eventKey="1" className={stylesAcordeon.item}>
+                        <Accordion.Header className="custom-accordion-header">Medios de pago</Accordion.Header>
+                        <Accordion.Body className="custom-accordion-body">
                             <MediosDePagoCard />
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="2" >
-                        <Accordion.Header>Facturación</Accordion.Header>
-                        <Accordion.Body>
+                    <Accordion.Item eventKey="2" className={stylesAcordeon.item}>
+                        <Accordion.Header className="custom-accordion-header">Facturación</Accordion.Header>
+                        <Accordion.Body className="custom-accordion-body">
                             <FacturacionCard />
                         </Accordion.Body>
                     </Accordion.Item>
