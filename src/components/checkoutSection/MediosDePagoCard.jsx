@@ -1,6 +1,6 @@
 import { Card, Accordion } from "react-bootstrap";
-import PagoTarjeta from "../formaPago/PagoTarjeta";
-import PagoEfectivo from "../formaPago/PagoEfectivo";
+import PagoTarjeta from "../formaPagoOption/PagoTarjeta";
+import PagoEfectivo from "../formaPagoOption/PagoEfectivo";
 import styles from "../../pages/checkout/Checkout.module.css";
 
 function MediosDePagoCard() {
