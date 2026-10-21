@@ -1,0 +1,81 @@
+.item {
+  border: 1px solid #dfcfb3;
+  border-radius: 0;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #29251f; /* terracota */
+  margin: 8px 0;
+  width: 100%; /* ocupa todo el ancho */
+}
+
+.titulo {
+  margin-bottom: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--marron, #29251f);
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.texto {
+  margin-bottom: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--marron, #29251f);
+  font-weight: 700 !important;;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+.tachado {
+  text-decoration: line-through;
+}
+
+.boton {
+  background-color: var(--marron-suave, #5c5548); 
+  border: none;
+  border-radius: 1.5rem; 
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--crema-clara,#fbf5e9);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.boton:hover {
+  background-color: #302c25;
+}
+
+.modalCompraExitosa .modal-content {
+  background-color: var(--crema-clara);
+  border: 1px solid var(--borde);
+}
+
+.modalCompraExitosa .modal-header {
+  background-color: var(--terracota);
+  color: var(--crema-clara);
+  border-bottom: 1px solid var(--borde);
+}
+
+.modalCompraExitosa .modal-footer {
+  background-color: var(--crema-clara);
+  border-top: 1px solid var(--borde);
+}
+
+.modalCompraExitosa hr {
+  border: none;
+  border-top: 1px solid var(--terracota); /* tu color */
+  margin: 8px 0;
+  max-width: max-content;
+}
+
+.modalCompraExitosa .btn-close {
+  filter: invert(1); /* lo vuelve blanco sobre fondo terracota */
+}

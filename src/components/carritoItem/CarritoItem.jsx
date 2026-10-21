@@ -1,4 +1,4 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import itemStyles from "./CarritoItem.module.css";
 import CarritoItemHeader from "./CarritoItemHeader";
 import CarritoItemBody from "./CarritoItemBody";
