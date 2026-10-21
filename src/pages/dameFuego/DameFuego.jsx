@@ -1,10 +1,23 @@
+import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import VinylCard from '../../components/vinylCard/VinylCard';
+import AvisoCarrito from '../../components/avisoCarrito/AvisoCarrito';
+import { agregarProducto } from "../../utils/operacionesCarrito";
 import { productos } from '../../data/products'; 
 import styles from './DameFuego.module.css';
 
-function DameFuego() {
+function DameFuego({ onActualizarCarrito }) {
   const discosSandro = productos.filter(producto => producto.dameFuego === true);
+
+  const [avisoCarrito, setAvisoCarrito] = useState("");
+  const handleAgregarAlCarrito = (producto) => {
+      // alert(`¡${producto.name} agregado al carrito!`);
+      if (producto.stock <= 0) return;
+          console.log("Producto seleccionado:", producto);
+          agregarProducto(producto); 
+          if (onActualizarCarrito) { onActualizarCarrito(); }
+          setAvisoCarrito(`${producto.name} se agregó al carrito.`);
+    };
 
   return (
     <div className={styles.dameFuegoPage}>
@@ -13,7 +26,7 @@ function DameFuego() {
           <Row className="align-items-center">
             <Col lg={6} className="text-light mb-5 mb-lg-0">
               <h1 className={`display-2 mb-3 ${styles.tituloSandro}`}>
-                Dame Fuego
+                Dame Fuego 🔥
               </h1>
               <div className={styles.tributoBox}>
                 <h2 className="h4 text-uppercase fw-bold mb-3">La Inspiración Detrás de Lado V</h2>
@@ -25,7 +38,8 @@ function DameFuego() {
                 </p>
                 <p>
                   Porque el sonido analógico y el crepitar de la aguja son los únicos capaces de 
-                  transmitir el verdadero temblor de su voz. 
+                  transmitir el verdadero temblor de su voz. Con ustedes, la mejor colección de vinilos de Sandro que el mercado puede ofrecer en un solo
+                  lugar; Lado V:  
                 </p>
                 <span className={styles.firma}>— Más música. Más Sandro.</span>
               </div>
@@ -49,6 +63,11 @@ function DameFuego() {
           <div className={styles.separadorRetro}>
             <h3 className="text-center text-light mb-0">La Colección</h3>
           </div>
+
+          <AvisoCarrito 
+            mensaje={avisoCarrito} 
+            onClose={() => setAvisoCarrito("")} 
+          />
           
           <div className="mt-5">
             <Row className={styles.grilla}>
@@ -57,7 +76,7 @@ function DameFuego() {
                   <VinylCard 
                     key={disco.id} 
                     producto={disco} 
-                    //onAdd={agregarAlCarrito} 
+                    onAdd={handleAgregarAlCarrito} 
                   />
                 ))
               ) : (
