@@ -126,20 +126,31 @@
 }
 
 .cierre {
-  margin-top: 24px;
-  padding: 38px 24px;
-  background-color: #201c18;
+  margin-top: 36px;
+  padding: 32px 24px;
+  background-color: #f4ead5;
   border: 1px solid #b94f2d;
-  color: #f4ead5;
   text-align: center;
 }
 
-.cierre h2 { margin-top: 0; }
+.cierre h2 {
+  margin: 0 0 12px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
 
 .cierre p {
-  max-width: 560px;
-  margin: 0 auto 24px;
-  color: #d5c7b0;
+  margin: 0 0 20px;
+  color: #594b3c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.errores {
+  color: #b94f2d; 
+  font-size: '0.82rem'; 
+  font-weight: '600';
 }
 
 .boton {
@@ -226,6 +237,29 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.botonForm {
+  width: 150px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  padding: 12px 24px;
+  border: 1px solid #b94f2d;
+  border-radius: 24px;
+  background-color: #b94f2d;
+  color: #fff8eb;
+  font-size: 0.9rem;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.botonForm:hover {
+  background-color: #943b22;
+  color: #fff8eb;
 }
 
 .inputControl {

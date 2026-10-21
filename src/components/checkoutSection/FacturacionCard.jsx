@@ -1,7 +1,7 @@
 import { Card, Form } from "react-bootstrap";
 import { useState } from "react";
 import stylesFormulario from "../../pages/contact/Contact.module.css";
-import stylesErrores from "../../pages/checkout/Checkout.module.css";
+import stylesErrores from "../../components/checkout/Checkout.module.css";
 
 function FacturacionCard() {
   const [error, setError] = useState({});

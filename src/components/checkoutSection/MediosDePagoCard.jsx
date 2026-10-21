@@ -1,7 +1,7 @@
 import { Card, Accordion } from "react-bootstrap";
 import PagoTarjeta from "../formaPago/PagoTarjeta";
 import PagoEfectivo from "../formaPago/PagoEfectivo";
-import styles from "../../pages/checkout/Checkout.module.css";
+import styles from "../../components/checkout/Checkout.module.css";
 
 function MediosDePagoCard() {
 

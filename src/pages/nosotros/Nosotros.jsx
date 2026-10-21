@@ -1,13 +1,11 @@
-import { useState } from "react";
-import styles from "./Nosotros.module.css";
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
-import { useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router";
 import { useLocation } from 'react-router-dom';
-
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import styles from "./Nosotros.module.css";
 
 function Nosotros() {
-
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -20,34 +18,23 @@ function Nosotros() {
     email: ''
   });
 
-  // Guarda los errores de cada campo
   const [errores, setErrores] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  // Manejador dinámico de cambios
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Limpia el error del campo cuando el usuario vuelve a escribir
-    if (errores[name]) {
-      setErrores({ ...errores, [name]: '' });
-    }
+    if (errores[name]) { setErrores({ ...errores, [name]: '' }); }
   };
 
-  // Función de validación idéntica a la de Contacto
   const validar = (dato) => {
     const newErrores = {};
 
-    // Validar Nombre
-    if (!dato.nombre.trim()) {
-      newErrores.nombre = 'El nombre es obligatorio';
-    }
+    if (!dato.nombre.trim()) { newErrores.nombre = 'El nombre es obligatorio'; }
 
-    // Validar Email (igual que en Contacto)
-    if (!dato.email.trim()) {
-      newErrores.email = 'El correo electrónico es obligatorio';
-    } else if (!dato.email.includes('@') || !dato.email.includes('.')) {
+    if (!dato.email.trim()) { newErrores.email = 'El correo electrónico es obligatorio'; } 
+    else if (!dato.email.includes('@') || !dato.email.includes('.')) {
       newErrores.email = 'El correo electrónico debe tener un formato válido (ejemplo@dominio.com)';
     }
 
@@ -60,11 +47,8 @@ function Nosotros() {
     const validacionDeErrores = validar(formData);
     setErrores(validacionDeErrores);
 
-    if (Object.keys(validacionDeErrores).length === 0) {
-      setSubmitted(true);
-    } else {
-      setSubmitted(false);
-    }
+    if (Object.keys(validacionDeErrores).length === 0) { setSubmitted(true); } 
+    else { setSubmitted(false); }
   };
 
   return (
@@ -155,40 +139,30 @@ function Nosotros() {
               
               <div className={styles.formularioComunidad}>
                 <FloatingLabel controlId="floatingNombre" label="Nombre *" className="mb-3">
-                  <Form.Control 
-                    type="text" 
-                    name="nombre"
-                    placeholder="Nombre" 
-                    value={formData.nombre}
-                    onChange={handleChange}
+                  <Form.Control type="text" name="nombre" placeholder="Nombre" 
+                    value={formData.nombre} onChange={handleChange}
                     className={`${styles.inputControl} ${errores.nombre ? 'is-invalid' : ''}`} 
                   />
                 </FloatingLabel>
                 {errores.nombre && (
-                  <div className="invalid-feedback d-block mb-2" style={{ color: '#b94f2d', fontSize: '0.82rem', fontWeight: '600' }}>
+                  <div className={`invalid-feedback d-block mb-2 ${styles.errores}`}>
                     {errores.nombre}
                   </div>
                 )}
 
                 <FloatingLabel controlId="floatingEmail" label="Correo electrónico *" className="mb-3">
-                  <Form.Control 
-                    type="email" 
-                    name="email"
-                    placeholder="nombre@gmail.com" 
-                    value={formData.email}
-                    onChange={handleChange}
+                  <Form.Control type="email" name="email" placeholder="nombre@gmail.com" 
+                    value={formData.email} onChange={handleChange}
                     className={`${styles.inputControl} ${errores.email ? 'is-invalid' : ''}`} 
                   />
                 </FloatingLabel>
                 {errores.email && (
-                  <div className="invalid-feedback d-block mb-2" style={{ color: '#b94f2d', fontSize: '0.82rem', fontWeight: '600' }}>
+                  <div className={`invalid-feedback d-block mb-2 ${styles.errores}`}>
                     {errores.email}
                   </div>
                 )}
 
-                <button type="submit" className={styles.boton}>
-                  Suscribirme
-                </button>
+                <button type="submit" className={styles.botonForm}> Suscribirme </button>
               </div>
             </form>
           )}
@@ -201,7 +175,7 @@ function Nosotros() {
           Explorá el catálogo y encontrá ese vinilo que
           todavía tiene un lugar en tu colección.
         </p>
-        <a href="/productos" className={styles.boton}> Explorar vinilos </a>
+        <NavLink to="/contacto" className={styles.boton}> Explorar vinilos </NavLink>
       </section>
     </main>
   );

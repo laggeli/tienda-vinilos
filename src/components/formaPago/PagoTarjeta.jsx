@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap";
 import { useState } from "react";
-import stylesErrores from "../../pages/checkout/Checkout.module.css";
+import stylesErrores from "../../components/checkout/Checkout.module.css";
 
 function PagoTarjeta() {
     const [medioSeleccionado, setMedioSeleccionado] = useState("");

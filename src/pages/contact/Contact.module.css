@@ -60,13 +60,17 @@
 }
 
 .formulario :global(.btn-primary) {
-  padding: 11px 18px;
+  margin: 0 auto;
+  display: flex;
+  padding: 12px 24px;
   border: 1px solid #b94f2d;
   border-radius: 24px;
   background-color: #b94f2d;
   color: #fff8eb;
+  font-size: 0.9rem;
   font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  justify-content: center;
+  transition: background-color 0.2s ease;
 }
 
 .formulario :global(.btn-primary:hover) {
