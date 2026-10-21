@@ -9,7 +9,6 @@ import {
   eliminarProducto
 } from "../../utils/operacionesCarrito";
 import styles from "./Carrito.module.css"
-import itemStyles from "../../components/carritoItem/CarritoItem.module.css";
 
 function Carrito({onActualizarCarrito}) {
   // Se obtiene el carrito inicial desde el módulo de operaciones
