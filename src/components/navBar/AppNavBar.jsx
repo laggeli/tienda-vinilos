@@ -37,6 +37,10 @@ function AppNavBar({ cantidadProductosEnCarrito }) {
               Contacto
             </Nav.Link>
 
+            <Nav.Link as={NavLink} to="/dame-fuego" className={styles.navLink} >
+              Dame Fuego 🔥
+            </Nav.Link>
+
             <Nav.Link as={NavLink} to="/preguntasFrecuentes" className={styles.navLink}>
               Preguntas frecuentes
             </Nav.Link>

@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact";
 import Carrito from "./pages/carrito/Carrito";
 import Checkout from "./pages/checkout/Checkout";
 import Nosotros from "./pages/nosotros/Nosotros";
+import DameFuego from "./pages/dameFuego/DameFuego";
 import FrequentQuestions from "./pages/frecuentQuestions/FrequentQuestions";
 import Devolutions from "./pages/devolutions/Devolutions";
 import NotFound from "./pages/notFound/NotFound";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/carrito" element={<Carrito onActualizarCarrito={actualizarTotal}/>} />
           <Route path="/checkout" element={<Checkout onActualizarCarrito={actualizarTotal}/>} />
           <Route path="/nosotros" element={<Nosotros onActualizarCarrito={actualizarTotal} />} />
+          <Route path="/dame-fuego" element={<DameFuego onActualizarCarrito={actualizarTotal} />} />
           <Route path="/preguntasFrecuentes" element={<FrequentQuestions onActualizarCarrito={actualizarTotal} />} />
           <Route path="/devoluciones" element={<Devolutions onActualizarCarrito={actualizarTotal} />} />
           <Route path="*" element={<NotFound />} />
