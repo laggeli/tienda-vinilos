@@ -3,7 +3,7 @@ import { useState } from "react";
 import ComboProvincias from "./ComboProvincias";
 import stylesErrores from "./FormularioDeEnvio.module.css";
 import stylesFormulario from "../../pages/contact/Contact.module.css";
-import styles from "../../components/checkout/Checkout.module.css";
+import styles from "../../pages/checkout/Checkout.module.css";
 function FormularioDeEnvio() {
     const [error, setError] = useState({});
     const [datosEnvio, setDatosEnvio] = useState({

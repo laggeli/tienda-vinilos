@@ -2,7 +2,7 @@ import { Card, Form } from "react-bootstrap";
 import { useState } from "react";
 import PuntosRetiroList from "../../components/listadoFormasEnvio/PuntosRetiroList";
 import TiposEnvioList from "../../components/listadoFormasEnvio/TiposEnvioList";
-import stylesEnvio from "../../components/checkout/Checkout.module.css";
+import stylesEnvio from "../../pages/checkout/Checkout.module.css";
 
 function EnvioCard({ total, tipoEnvioCambia }) {
     const [metodoEnvio, setMetodoEnvio] = useState("envio");

@@ -7,7 +7,7 @@ import Products from "./pages/products/Products";
 import ProductsDetail from "./pages/productDetail/ProductDetail";
 import Contact from "./pages/contact/Contact";
 import Carrito from "./pages/carrito/Carrito";
-import Checkout from "./components/checkout/Checkout";
+import Checkout from "./pages/checkout/Checkout";
 import Nosotros from "./pages/nosotros/Nosotros";
 import DameFuego from "./pages/dameFuego/DameFuego";
 import FrequentQuestions from "./pages/frequentQuestions/FrequentQuestions";
