@@ -10,7 +10,7 @@ function ComboProvincias({ value, onChange, error }) {
         name="provincia"
         value={value}
         onChange={onChange}
-        className={`form-control ${error ? stylesErrores.errorInput : ""}`}
+        className={`${stylesErrores.selectIngresado} ${error ? stylesErrores.errorInput : ""}`}
         required
     >
         <option value="">Seleccione una provincia</option>

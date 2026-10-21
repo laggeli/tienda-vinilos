@@ -1,8 +1,6 @@
 .item {
-  /* border: 1px solid #dfcfb3; */
   border-radius: 0;
   color: #29251f;
-  
 }
 
 .itemText {
@@ -10,14 +8,37 @@
     padding: 11px 10px;
 }
 
-.item :global(.form-label) {
+.itemEnvio {
+  margin: auto;
+  border-radius: 0;
+  /* background-color: #fbf5e9; */
+  border: 1px solid #dfd0b5;
+}
+
+.itemPago{
+  border: none;
+  border-radius: 0;
+  /* background-color: #fbf5e9; */
+}
+
+.itemFacturacion{
+  max-width: 760px;
+  margin: auto;
+  border: 1px solid #dfd0b5;
+  border-radius: 0;
+  /* background-color: #fbf5e9; */
+  color: #29251f;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.itemFacturacion :global(.form-label) {
   margin-bottom: 8px;
   color: #473a2e;
   font-size: 0.9rem;
   font-weight: 600;
 }
 
-.item :global(.form-control) {
+.itemFacturacion :global(.form-control) {
   padding: 11px 13px;
   border: 1px solid #cbb99c;
   border-radius: 3px;
@@ -27,34 +48,18 @@
   font-size: 0.92rem;
 }
 
-.item :global(.form-control::placeholder) {
+.itemFacturacion :global(.form-control::placeholder) {
   color: #958671;
 }
 
-.item :global(.form-control:focus) {
+.itemFacturacion :global(.form-control:focus) {
   border-color: #b94f2d;
   background-color: #fffaf0;
   box-shadow: 0 0 0 3px rgba(185, 79, 45, 0.14);
 }
 
-.item :global(.is-invalid) {
+.itemFacturacion :global(.is-invalid) {
   border-color: #b94f2d;
-}
-
-.itemEnvio {
-  margin: auto;
-  border: none;   /* sin borde */
-  border-radius: 0;
-}
-
-.itemFacturacion{
-  max-width: 760px;
-  margin: auto;
-  border: 1px solid #dfd0b5;
-  border-radius: 5px;
-  background-color: #f8f0df;
-  color: #29251f;
-  font-family: 'DM Sans', sans-serif;
 }
 
 .titulo {
@@ -106,13 +111,6 @@
   color: var(--terracota);
 }
 
-/* .gratis {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--verde);
-  margin-top: 0.25rem;
-} */
-
 .textoIngresado:focus {
   border-color: var(--terracota);
   background-color: #fffaf0;
@@ -131,40 +129,4 @@
   margin-top: 0.25rem;
 }
 
-.accordion-base {
-  --bs-accordion-border-color: var(--borde);
-  --bs-accordion-bg: var(--crema);
-  --bs-accordion-btn-bg: var(--crema-clara);
-  --bs-accordion-btn-color: var(--marron-suave);
-  --bs-accordion-btn-icon-color: var(--marron-suave);
-
-  --bs-accordion-active-bg: var(--terracota);
-  --bs-accordion-active-color: var(--crema-clara);
-  --bs-accordion-active-icon-color: var(--crema-clara);
-  --bs-accordion-btn-active-icon-color: var(--crema-clara); /* ícono activo */
-  --bs-accordion-btn-focus-box-shadow: none;
-}
-
-
-:global(.accordion-base .accordion-button) {
-  background-color: var(--crema-clara) !important;
-  color: var(--marron-suave) !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-:global(.accordion-base .accordion-button:not(.collapsed)) {
-  background-color: var(--terracota-oscura) !important;
-  color: var(--crema-clara) !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-:global(.accordion-base .accordion-button:focus) {
-  background-color: var(--terracota-oscura) !important;
-  color: var(--crema-clara) !important;
-  box-shadow: none !important;
-  border: none !important;
-  outline: none !important;
-}
 
