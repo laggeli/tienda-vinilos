@@ -7,7 +7,10 @@ import {
   totalPesos
 } from "../../utils/operacionesCarrito";
 
-function ResumenCompraCard() {
+function ResumenCompraCard({ botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
+    const total = totalPesos();
+    const mostrarGratis = total >= 100000;
+
     function calcularDescuento(total) {
         // Ejemplo: 10% de descuento
         return total * 0.1;
@@ -35,33 +38,41 @@ function ResumenCompraCard() {
                     <hr />
                     <div className="d-flex justify-content-between">
                         <strong>Productos ({cantidadTotal()})</strong>
-                        <span>${totalPesos()}</span>
+                        <span>${total}</span>
                     </div>
                     <div className="d-flex justify-content-between">
                         <strong>Descuento</strong>
-                        <span className="text-success">-${calcularDescuento(totalPesos())}</span>
+                        <span className="text-success">-${calcularDescuento(total)}</span>
                     </div>
                     <div className="d-flex justify-content-between">
                         <strong>Envío</strong>
-                        <span className="text-muted">+${calcularEnvio(totalPesos())}</span>
+                        <span className="text-muted">
+                            {mostrarGratis ? "Gratis" : `+$${calcularEnvio(total)}`}
+                        </span>
                     </div>
                     <div className="d-flex justify-content-between">
                         <strong>Total</strong>
                         <span>
                             <span className={`text-muted ${stylesResumen.tachado} fs-6`}>
-                                ${calcularTotalMasEnvio(totalPesos())}
+                                ${calcularTotalMasEnvio(total)}
                             </span>{" "}
                             <span className="fw-bold fs-5">
-                                ${calcularTotal(totalPesos())}
+                                ${calcularTotal(total)}
                             </span>
                         </span>
                     </div>
                     <div>
-                        <Link to="/checkout">
+                        {onBotonClick ? (
+                            <Button className={stylesResumen.botonComprar} onClick={onBotonClick}>
+                            {botonTexto}
+                            </Button>
+                        ) : (
+                        <Link to={botonLink}>
                         <Button className={stylesResumen.botonComprar}>
-                            Comprar
+                            {botonTexto}
                         </Button>
                         </Link>
+                        )}
                     </div>
                 </div>
             </Card.Body>
