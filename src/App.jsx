@@ -10,7 +10,7 @@ import Carrito from "./pages/carrito/Carrito";
 import Checkout from "./pages/checkout/Checkout";
 import Nosotros from "./pages/nosotros/Nosotros";
 import DameFuego from "./pages/dameFuego/DameFuego";
-import FrequentQuestions from "./pages/frecuentQuestions/FrequentQuestions";
+import FrequentQuestions from "./pages/frequentQuestions/FrequentQuestions";
 import Devolutions from "./pages/devolutions/Devolutions";
 import NotFound from "./pages/notFound/NotFound";
 import AppNavBar from "./components/navBar/AppNavBar";

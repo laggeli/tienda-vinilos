@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, Button, Form, InputGroup } from "react-bootstrap";
 import { Link } from "react-router"; 
 import stylesResumen from "./ResumenCompraCard.module.css";
-import { cantidadTotal, totalPesos } from "../../utils/operacionesCarrito";
+import { cantidadTotal, totalPesos, obtenerEnvio } from "../../utils/operacionesCarrito";
 import { CUPONES_VALIDOS } from "../../utils/cupones";
 
 function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick, botonLink = "/checkout" }) {
@@ -12,7 +12,9 @@ function ResumenCompraCard({ carrito = [], botonTexto = "Comprar", onBotonClick,
 
     const total = totalPesos();
     const mostrarGratis = total >= 100000;
-    const costoEnvio = mostrarGratis ? 0 : total * 0.05;
+    
+    const costoEnvioBase = obtenerEnvio();
+    const costoEnvio = mostrarGratis ? 0 : costoEnvioBase;
 
     let montoDescuento = 0;
     if (cuponActivo && CUPONES_VALIDOS[cuponActivo]) {
