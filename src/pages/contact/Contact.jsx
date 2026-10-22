@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "./Contact.module.css";
 
 export default function FormularioContacto() {
+  useEffect(() => { document.title = "Lado V | Contacto"; }, []);
   const [formData, setFormData] = useState({
     nombre: '',
     phone: '',

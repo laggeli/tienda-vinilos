@@ -6,12 +6,14 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import styles from "./Nosotros.module.css";
 
 function Nosotros() {
+  useEffect(() => { document.title = "Lado V | Nosotros"; }, []);
   const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
       const elemento = document.getElementById(hash.replace('#', ''));
-      if (elemento) {elemento.scrollIntoView({ behavior: 'smooth' });}}}, [hash]);
+      if (elemento) {elemento.scrollIntoView({ behavior: 'smooth' });}
+    }}, [hash]);
 
   const [formData, setFormData] = useState({
     nombre: '',

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import VinylCard from '../../components/vinylCard/VinylCard';
 import AvisoCarrito from '../../components/avisoCarrito/AvisoCarrito';
@@ -7,6 +7,7 @@ import { productos } from '../../data/products';
 import styles from './DameFuego.module.css';
 
 function DameFuego({ onActualizarCarrito }) {
+  useEffect(() => { document.title = "Lado V | Sandro"; }, []);
   const discosSandro = productos.filter(producto => producto.dameFuego === true);
 
   const [avisoCarrito, setAvisoCarrito] = useState("");

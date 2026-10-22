@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router";
 import { preguntas } from "../../data/questions.js";
 import styles from "./FrequentQuestions.module.css";
 
 function FrequentCuestions() {
+  useEffect(() => { document.title = "Lado V | Preguntas Frecuentes"; }, []);
   return (
     <main className={styles.faq}>
       <header className={styles.encabezado}>

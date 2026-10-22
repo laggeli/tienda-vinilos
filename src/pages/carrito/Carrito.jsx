@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CarritoItem from "../../components/carritoItem/CarritoItem";
 import ResumenCompraCard from "../../components/carritoItem/ResumenCompraCard";
@@ -16,6 +16,7 @@ import styles from "./Carrito.module.css"
 
 
 function Carrito({onActualizarCarrito}) {
+  useEffect(() => { document.title = "Lado V | Carrito"; }, []);
   // Se obtiene el carrito inicial desde el módulo de operaciones
   const [carrito, setCarrito] = useState(obtenerCarrito());
   const [codigoInput, setCodigoInput] = useState("");   
