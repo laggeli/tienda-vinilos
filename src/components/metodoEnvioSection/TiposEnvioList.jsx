@@ -1,7 +1,9 @@
 import FormularioDeEnvio from "./FormularioDeEnvio";
-function TiposEnvioList() {
+import TipoDeEntrega from "./TipoDeEntrega";
+function TiposEnvioList({ total }) {
   return (
     <div>
+        <TipoDeEntrega total={total}/>
         <FormularioDeEnvio/>
     </div>
   )

@@ -31,7 +31,7 @@ function EnvioCard({ total, tipoEnvioCambia }) {
                     </button>
                 </div>
                 {metodoEnvio === "retiro" && (<PuntosRetiroList />)}
-                {metodoEnvio === "envio" && (<TiposEnvioList />)}
+                {metodoEnvio === "envio" && (<TiposEnvioList total={total}/>)}
             </Card.Body>
         </Card>
     )
