@@ -5,28 +5,66 @@ import MediosDePagoCard from "../../components/checkoutSection/MediosDePagoCard"
 import FacturacionCard from "../../components/checkoutSection/FacturacionCard";
 import ResumenCompraCard from "../../components/carritoItem/ResumenCompraCard";
 import CompraExitosaModal from "../../components/resultadoPago/CompraExitosaModal";
-import { cantidadTotal, totalPesos, obtenerCarrito } from "../../utils/operacionesCarrito";
+import { cantidadTotal, totalPesos, obtenerCarrito, calcularDescuento } from "../../utils/operacionesCarrito";
+import { CUPONES_VALIDOS } from "../../utils/cupones";
 import styles from "./Checkout.module.css";
 import stylesAcordeon from "../../components/acordeonCustom/AcordeonCustomStyles.module.css";
 
 function Checkout() {
 useEffect(() => { document.title = "Lado V | Finalizar compra"; }, []);
   const [showModal, setShowModal] = useState(false);
-  const [metodoEnvio, setMetodoEnvio] = useState("envio");
-  
+  const [metodoEntrega, setMetodoEntrega] = useState("envio");
+  const [infoEnvio, setInfoEnvio] = useState({ metodo: null, precio: 0 });
   const [carrito, setCarrito] = useState(obtenerCarrito());
   
-  const mostrarGratis = totalPesos() >= 100000;  
+  //cupones
+  const [codigoInput, setCodigoInput] = useState("");   
+  const [cuponActivo, setCuponActivo] = useState(localStorage.getItem("cuponActivo") || null);
 
-  const costoEnvio = totalPesos() * 0.05;
+  const [mensajeCupon, setMensajeCupon] = useState("");
+  
+  //condicion de envio gratis
+  const mostrarGratis = totalPesos() >= 100000; 
+
+  //calculo importe envio  
+  let costoEnvio = 0;
+  if (metodoEntrega === "envio") {
+    costoEnvio = mostrarGratis ? 0 : infoEnvio.precio;
+  } else if (metodoEntrega === "retiro") {
+    costoEnvio = 0;
+  }
+
+  // calculo importe descuento
+  const valorDescuento = calcularDescuento(cuponActivo, carrito);
+
   const resumen = {
     productos: cantidadTotal(),
     total: totalPesos(),
-    descuento: totalPesos() * 0.1, 
-    envio: mostrarGratis ? 0 : costoEnvio,
-    totalFinal: totalPesos() - (totalPesos() * 0.1) + (mostrarGratis ? 0 : costoEnvio),
+    descuento: valorDescuento, 
+    envio: costoEnvio,
+    totalFinal: totalPesos() - valorDescuento + costoEnvio,
     mostrarGratis
   };
+
+    const aplicarCupon = () => {
+        const codigo = codigoInput.trim().toUpperCase();
+        if (CUPONES_VALIDOS[codigo]) {
+        const descuento = CUPONES_VALIDOS[codigo].calcularDescuento(carrito);
+        if (descuento > 0) {
+            setCuponActivo(codigo);
+            localStorage.setItem("cuponActivo", codigo);
+            setMensajeCupon(CUPONES_VALIDOS[codigo].mensaje);
+        } else {
+            setCuponActivo(null);
+            localStorage.removeItem("cuponActivo");
+            setMensajeCupon("Este cupón no aplica a los productos del carrito.");
+        }
+        } else {
+        setCuponActivo(null);
+        localStorage.removeItem("cuponActivo");
+        setMensajeCupon("Código inválido o expirado.");
+        }
+    };
 
   return (
     <Container>
@@ -40,7 +78,9 @@ useEffect(() => { document.title = "Lado V | Finalizar compra"; }, []);
                     <Accordion.Item eventKey="0" className={stylesAcordeon.item}>
                         <Accordion.Header className="custom-accordion-header">Forma de entrega</Accordion.Header>
                         <Accordion.Body className="custom-accordion-body">
-                            <EnvioCard total={resumen.total} tipoEnvioCambia={setMetodoEnvio} />
+                            <EnvioCard 
+                                total={resumen.total} 
+                                tipoEntregaCambia={setMetodoEntrega} tipoEnvioCambia={setInfoEnvio} />
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1" className={stylesAcordeon.item}>
@@ -61,10 +101,16 @@ useEffect(() => { document.title = "Lado V | Finalizar compra"; }, []);
             {/* Totales */}
             <Col md={4}>
                 <ResumenCompraCard 
-                // 3. Le pasamos los productos a la tarjeta
                 carrito={carrito} 
                 botonTexto="Pagar" 
                 onBotonClick={() => setShowModal(true)} 
+                resumen={resumen} 
+                metodoEntrega={metodoEntrega}
+                codigoInput={codigoInput}
+                setCodigoInput={setCodigoInput}
+                aplicarCupon={aplicarCupon}
+                mensajeCupon={mensajeCupon}
+                cuponActivo={cuponActivo}
                 />
             </Col>
         </Row>
@@ -73,7 +119,7 @@ useEffect(() => { document.title = "Lado V | Finalizar compra"; }, []);
             show={showModal} 
             onClose={() => setShowModal(false)} 
             resumen={resumen} 
-            metodoEnvio={metodoEnvio} 
+            metodoEntrega={metodoEntrega} 
         />
     </Container>
   )

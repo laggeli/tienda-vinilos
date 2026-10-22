@@ -1,3 +1,4 @@
+import { CUPONES_VALIDOS } from "../utils/cupones";
 let carrito = [];
 
 export function agregarProducto(producto) {
@@ -42,14 +43,9 @@ export function totalPesos() {
   );
 }
 
-export function obtenerEnvio() {
-  if (carrito.length === 0) return 0;
-  // Busco el producto más barato y lo guardo en masBarato
-  const masBarato = carrito.reduce((min, item) =>
-    item.price < min.price ? item : min
-  );
-
-  // Ejemplo de cálculo: 5% del precio del más barato
-  const porcentajeEnvio = 0.05;
-  return masBarato.price * porcentajeEnvio;
+export function calcularDescuento(cuponActivo, carrito) {
+  if (cuponActivo && CUPONES_VALIDOS[cuponActivo]) {
+    return CUPONES_VALIDOS[cuponActivo].calcularDescuento(carrito);
+  }
+  return 0;
 }
