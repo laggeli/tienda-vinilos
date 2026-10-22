@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { NavLink } from "react-router";
 import styles from "./Devolutions.module.css";
 
 function Devolutions() {
+  useEffect(() => { document.title = "Lado V | Devoluciones"; }, []);
   return (
     <main className={styles.devoluciones}>
       <header className={styles.encabezado}>

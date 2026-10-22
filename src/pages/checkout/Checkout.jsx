@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import EnvioCard from "../../components/checkoutSection/EnvioCard";
 import MediosDePagoCard from "../../components/checkoutSection/MediosDePagoCard";
@@ -10,6 +10,7 @@ import styles from "./Checkout.module.css";
 import stylesAcordeon from "../../components/acordeonCustom/AcordeonCustomStyles.module.css";
 
 function Checkout() {
+useEffect(() => { document.title = "Lado V | Finalizar compra"; }, []);
   const [showModal, setShowModal] = useState(false);
   const [metodoEnvio, setMetodoEnvio] = useState("envio");
   
