@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { productos } from "../../data/products.js"; 
 import { agregarProducto } from "../../utils/operacionesCarrito.js"; 
+import { FaArrowLeft } from "react-icons/fa";
 import AvisoCarrito from "../../components/avisoCarrito/AvisoCarrito.jsx"; 
 import VinylCard from "../../components/vinylCard/VinylCard.jsx"; 
 import styles from "./ProductDetail.module.css";
@@ -44,10 +45,14 @@ function ProductDetails({ onActualizarCarrito }) {
   return (
     <section className={styles.detailSection}>
       <Container className="py-4">
-        
-        <nav className={styles.breadcrumb}>
-          <Link to="/">Inicio</Link> / <Link to="/productos">Tienda</Link> / <span>{producto.category}</span>
-        </nav>
+        <div className="d-flex justify-content-between align-items-start w-100">
+          <nav className={styles.breadcrumb}>
+            <Link to="/">Inicio</Link> / <Link to="/productos">Tienda</Link> / <span>{producto.category}</span>
+          </nav>
+          <Link to="/productos" className={`btn btn-outline-secondary btn-sm d-flex align-items-center gap-2 ${styles.botonVolver}`}>
+            <FaArrowLeft size={12} /> Volver
+          </Link>
+        </div>
 
         <AvisoCarrito 
           mensaje={avisoCarrito} 
@@ -56,7 +61,6 @@ function ProductDetails({ onActualizarCarrito }) {
 
         <Row className="mb-5 align-items-start">
           <Col md={6} className="mb-4 mb-md-0">
-            {/* Contenedor Wrapper para limitar el ancho */}
             <div className={styles.coverWrapper}>
               <div className={styles.coverContainer}>
                 <img 

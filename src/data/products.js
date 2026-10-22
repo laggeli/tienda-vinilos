@@ -7,7 +7,7 @@ export const productos = [
         price: 85000,
         image: "/img/losredondos-oktubre.jpg",
         imageVinyl: "/img/losredondos-oktubre-vinyl.jpg",
-        description: "",
+        description: "Oktubre es el segundo álbum de estudio de la mítica banda de rock argentino Patricio Rey y sus Redonditos de Ricota, lanzado el 4 de octubre de 1986 bajo el sello independiente Wormo.\n\nTracklist destacado:\n1. Preso en mi Ciudad\n2. Semen-Up\n3. Motor Psico\n4. Jijiji",
         destacado: true,
         dameFuego: false,
         stock: 10
@@ -20,7 +20,7 @@ export const productos = [
         price: 60000,
         image: "/img/laspelotas-despierta.jpg",
         imageVinyl: "/img/laspelotas-despierta-vinyl.jpg",
-        description: "",
+        description: "Despierta es el octavo álbum de estudio del grupo argentino de rock Las Pelotas. Se produjo en el año 2009, en el contexto del fallecimiento de Alejandro Sokol en enero de ese año, y se publicó en julio del mismo año. \n\nTracklist:\n1. ¿Qué podes dar?\n2. Pasajero\n3. Personalmente\n4. Destellos",
         destacado: false,
         dameFuego: false,
         stock: 4
@@ -33,7 +33,7 @@ export const productos = [
         price: 65000,
         image: "/img/viejaslocas-especial.jpg",
         imageVinyl: "/img/viejaslocas-especial-vinyl.jpg",
-        description: "",
+        description: "Especial es el tercer álbum de estudio del grupo musical de rock argentino Viejas Locas. Fue publicado por la discográfica PolyGram en 1999. El álbum fue grabado en el estudio Circo Beat entre noviembre y diciembre de 1998 y salió a la venta el 28 de marzo de 1999. \n\nTracklist destacado:\n1. Todo Sigue Igual\n2. Me Gustas Muchon\n3. ¿Qué Vas A Hacer Tan Sola Hoy?\n4. Legalíncela",
         destacado: false,
         dameFuego: false,
         stock: 5
@@ -46,7 +46,7 @@ export const productos = [
         price: 82000,
         image: "/img/charlygarcía-clicsmodernos.jpg",
         imageVinyl: "/img/charlygarcía-clicsmodernos-vinyl.jpg",
-        description: "",
+        description: "Clics modernos es el segundo álbum de estudio del cantante y multinstrumentista argentino Charly García como solista, publicado el 5 de noviembre de 1983 por la compañía SG Discos.\n\nTracklist destacado:\n1. Nos siguen pegando abajo (pecado mortal)\n2. No soy un extraño\n3. Los dinosaurios\n4. Ojos de video tape",
         destacado: true,
         dameFuego: false,
         stock: 15
@@ -59,7 +59,7 @@ export const productos = [
         price: 76000,
         image: "/img/lospiojos-ayayay.jpg",
         imageVinyl: "/img/lospiojos-ayayay-vinyl.jpg",
-        description: "",
+        description: "Ay ay ay es el segundo álbum de estudio del grupo musical de Argentina Los Piojos. Grabado y mezclado en 1994 en el estudio Del Cielito Records. Fue el primer trabajo con Alfredo Toth y Adrián Bilbao como guías, ellos les imprimieron una buena dosis de trabajo, haciéndolos ensayar un mes antes de entrar al estudio.\n\nTracklist:\n1. Arco\n2. Babilonia\n3. Ay ay ay\n4. Pistolas\n5. Angelito\n6. Manise\n7. Ximenita\n8. Ando Ganas (Llora Llora)\n9. Fumigator\n10. Muy Despacito\n11. Es Sentir\n12. Te diría\n13. Arco II",
         destacado: false,
         dameFuego: false,
         stock: 0
@@ -72,7 +72,7 @@ export const productos = [
         price: 74000,
         image: "/img/lospiojos-3erarco.png",
         imageVinyl: "/img/lospiojos-3erarco-vinyl.jpg",
-        description: "",
+        description: "3er arco es el tercer álbum de estudio del grupo musical de Argentina Los Piojos. Publicado bajo el sello discográfico DBN. Grabado y mezclado entre junio y julio de 1996 en Del Cielito Records. Fue presentado oficialmente el 28 de septiembre de 1996 en el Estadio Obras Sanitarias.\n\nTracklist:\n1. Esquina Libertad\n2. Taxi Boy\n3. El Farolito\n4. Shup-Shup\n5. Al Atardecer\n6. Qué Decís\n7. Don't Say Tommorrow\n8. Todo Pasa\n9. Intro Maradó\n10. Maradó\n11. Gris\n12. Muévelo\n13. Verano del '92",
         destacado: false,
         dameFuego: false,
         stock: 4
@@ -85,7 +85,7 @@ export const productos = [
         price: 90000,
         image: "/img/sodastereo-cancionanimal.jpg",
         imageVinyl: "/img/sodastereo-cancionanimal-vinyl.jpg",
-        description: "",
+        description: "Canción Animal es el quinto álbum de estudio de la banda argentina de rock Soda Stereo, publicado el 7 de agosto de 1990 por Sony Music Latin.\n\nTracklist:\n1. (En) El Séptimo Día\n2. Un Millón de Años Luz\n3. Canción Animal\n4. 1990\n5. Sueles Dejarme Solo\n6. De Música Ligera\n7. Hombre Al Agua\n8. Entre Caníbales\n9. Té Para Tres\n10. Cae El Sol",
         destacado: true,
         dameFuego: false,
         stock: 25
@@ -98,7 +98,7 @@ export const productos = [
         price: 85000,
         image: "/img/sodastereo-dynamo.jpg",
         imageVinyl: "/img/sodastereo-dynamo-vinyl.jpg",
-        description: "",
+        description: "Dynamo es el sexto álbum de estudio de la banda argentina de rock Soda Stereo, lanzado al mercado en formato Cassette el 26 de octubre de 1992 por Sony Music Latin. Fue grabado y mezclado en el Estudio Supersónico, en Buenos Aires durante el año 1992.\n\nTracklist:\n1. Secuencia Inicial\n2. Toma la Ruta\n3. En Remolinos\n4. Primavera 0\n5. Camaleón\n6. Luna Roja\n7. Sweet Sahumerío\n8. Ameba\n9. Nuestra Fe\n10. Claroscuro\n11. Fue\n12. Texturas",
         destacado: false,
         dameFuego: false,
         stock: 21
@@ -111,7 +111,7 @@ export const productos = [
         price: 57000,
         image: "/img/miranda-hotelmiranda!.jpg",
         imageVinyl: "/img/miranda-hotelmiranda!-vinyl.jpg",
-        description: "",
+        description: "Hotel Miranda! es el noveno álbum de estudio del dúo argentino Miranda!, lanzado el 19 de abril de 2023 por Sony Music Argentina.\n\nTracklist:\n1. Don\n2. Yo Te Diré\n3. Perfecta\n4. Traición\n5. Uno De Los Dos\n6. Prisionero\n7. Enamorada\n8. Tu Misterioso Alguien\n9. Mentía\n10. Ya Lo Sabía\n11. Navidad",
         destacado: false,
         dameFuego: false,
         stock: 2
@@ -124,7 +124,7 @@ export const productos = [
         price: 52500,
         image: "/img/miranda-eldiscodetucorazón.jpg",
         imageVinyl: "/img/miranda-eldiscodetucorazón-vinyl.jpg",
-        description: "",
+        description: "El disco de tu corazón es el tercer álbum de estudio de la banda argentina Miranda!, lanzado el 1 de mayo del 2007 por la discografía Pelo Music. Producido por Cachorro López y escrito por Alejandro Sergi. Contando con las colaboraciones de Julieta Venegas y Fangoria.\n\nTracklist:\n1. Prisionero\n2. Hola\n3. Perfecta\n4. Enamorada\n5. Nada Es Igual\n6. Déjame\n7. Amanece Junto A Mí\n8. Hasta Hoy\n9. Vete De Aquí\n10. No Me Celes\n11. Te Atreviste Y Me Morí\n12. Voces",
         destacado: true,
         dameFuego: false,
         stock: 3
@@ -137,7 +137,7 @@ export const productos = [
         price: 87600,
         image: "/img/gustavocerati-bocanada.jpg",
         imageVinyl: "/img/gustavocerati-bocanada-vinyl.jpg",
-        description: "",
+        description: "Bocanada es el segundo álbum de estudio solista del músico argentino Gustavo Cerati, el primero luego de la disolución del grupo musical Soda Stereo. Fue publicado el 28 de junio de 1999 a través del sello discográfico BMG Ariola, y reeditado como doble LP el 21 de diciembre de 2015 por Sony Music Argentina.\n\nTracklist:\n1. Tabú\n2. Engaña\n3. Bocanada\n4. Puente\n5. Río Babel\n6. Beautiful\n7. Perdonar Es Divino\n8. Verbo Carne\n9. Raíz\n10. Y Si El Humo Está En Foco...\n11. Paseo Inmoral\n12. Aquí & Ahora (Los Primeros Tres Minutos)\n13. Aquí & Ahora (Y Después)\n14. Alma\n15. Balsa",
         destacado: false,
         dameFuego: false,
         stock: 8
@@ -150,7 +150,7 @@ export const productos = [
         price: 85000,
         image: "/img/gustavocerati-amoramarillo.jpg",
         imageVinyl: "/img/gustavocerati-amoramarillo-vinyl.jpg",
-        description: "",
+        description: "Amor amarillo es el primer álbum de estudio solista de la carrera de Gustavo Cerati, publicado el 1 de noviembre de 1993. La única presentación oficial del álbum fue un acústico hecho para la radio FM 100 en 1994, ya que Gustavo lo consideraba un disco íntimo.\n\nTracklist:\n1. Lisa\n2. Te Llevo para Que Me Lleves\n3. Pulsar\n4. Cabeza De Medusa\n5. Av. Alcorta\n6. Bajan\n7. Rombos\n8. Ahora Es Nunca\n9.A Merced\n10. Torteval",
         destacado: true,
         dameFuego: false,
         stock: 15
@@ -163,7 +163,7 @@ export const productos = [
         price: 50000,
         image: "/img/babasonicos-muchomás.jpg",
         imageVinyl: "/img/babasonicos-muchomás-vinyl.jpg",
-        description: "",
+        description: "Mucho Más es un álbum de outtakes (canciones descartadas y versiones alternativas) de la banda argentina Babasónicos, publicado en 2009 como un disco extra que complementa su noveno álbum de estudio, Mucho (2008). El paquete original incluye las canciones del disco Mucho además un segundo CD con 10 tracks adicionales.\n\nTracklist:\n1. Formidable\n2. Todo Dicho\n3. Para Lelos\n4. Mientras Tanto\n5. Letra Chica\n6. El Pozo\n7. Parece\n8. Pijamas (Remix)\n9. Nosotros (Mezcla 2)\n10. Yo Anuncio (Mezcla 2)",
         destacado: false,
         dameFuego: false,
         stock: 5
@@ -176,7 +176,7 @@ export const productos = [
         price: 49000,
         image: "/img/babasonicos-anoche.jpg",
         imageVinyl: "/img/babasonicos-anoche-vinyl.jpg",
-        description: "",
+        description: "Anoche es el octavo álbum de estudio del grupo argentino Babasónicos. Cuenta con Carca como invitado en el tema «Falsario». Musicalmente tiene guiños al rock alternativo de las primeras épocas de la banda combinadas con la esencia pop encontrada en Jessico.\n\nTracklist:\n1. Así Se Habla\n2. Carismático\n3. Yegua\n4. Un Flash\n5. Pobre Duende\n6. Solita\n7. Puesto\n8. Falsario\n9. Capricho\n10. El Colmo\n11. Ciegos Por El Diezmo\n12. Exámenes\n13. Muñeco\n14. Luces",
         destacado: true,
         dameFuego: false,
         stock: 3
@@ -189,7 +189,7 @@ export const productos = [
         price: 57000,
         image: "/img/attaque77-antihumano.jpg",
         imageVinyl: "/img/attaque77-antihumano-vinyl.jpg",
-        description: "",
+        description: "Antihumano es el noveno álbum de estudio del grupo musical de Argentina Attaque 77, publicado en noviembre de 2003 por el sello discográfico BMG Ariola. Este álbum incluye el reconocido corte de difusión «Western», en homenaje al difunto René Favaloro.\n\nTracklist:\n1. Echo Fuego\n2. Western\n3. Ojos De Perro\n4. Los Tiburones\n5. Morbo-Porno\n6. Barreda's Way\n7. Iemanja / Jive Talking\n8. Surfeando En El Soretero\n9. La Gente Que Habla Sola\n10. Hey-Hey\n11. Arrancacorazones\n12. Reality-Joe\n13. Antihumano\n14. Setentista\n15. El Pájaro Canta Hasta Morir\n16. Los Buenos Deseos / Adiós Pampa Mía\n17. Éxodo-Ska / No Llores Por Mi Argentina\n18. Neo-Satan",
         destacado: true,
         dameFuego: false,
         stock: 13
@@ -202,7 +202,7 @@ export const productos = [
         price: 45000,
         image: "/img/divididos-divididos.jpg",
         imageVinyl: "/img/divididos-divididos-vinyl.jpg",
-        description: "",
+        description: "Divididos es el noveno álbum de estudio de la banda de rock argentino Divididos. Es el primer álbum con material nuevo desde el lanzamiento de Amapola Del '66, en el año 2010 y fue grabado en los Estudios La Calandria por los mismos integrantes de Divididos, Ricardo Mollo, Diego Arnedo y Catriel Ciavarella.\n\nTracklist:\n1. Sábado\n2. Dame un limón\n3. ¿Qué tal?\n4. El 38\n5. ¿Qué ves?\n6. El arriero\n7. Tomando mate en La Paz\n8. Paisano de Hurlingham\n9. Cielito lindo\n10. 15-5\n11. Capo-Capón (Inédito)\n12. Cabezón (Inédito)\n13. Potpurri en vivo: El ojo blindado / Estallando desde el océano / Mejor no hablar (de ciertas cosas) / Haciendo cosas raras",
         destacado: true,
         dameFuego: false,
         stock: 0
@@ -215,7 +215,7 @@ export const productos = [
         price: 52000,
         image: "/img/sandro-unaMuchachaYUnaGuitarra.jpg",
         imageVinyl: "/img/sandro-unaMuchachaYUnaGuitarra-vinyl.jpg",
-        description: "El álbum que consolidó su transición definitiva hacia la balada romántica, transformándolo en un ídolo masivo. \nTracklist destacado: 1. Una muchacha y una guitarra, 2. Porque yo te amo, 3. Como lo hice yo, 4. Penumbras.",
+        description: "El álbum que consolidó su transición definitiva hacia la balada romántica, transformándolo en un ídolo masivo. \n\nTracklist destacado: \n1. Una muchacha y una guitarra \n2. Porque yo te amo \n3. Como lo hice yo \n4. Penumbras",
         destacado: true,
         dameFuego: true,
         stock: 5
@@ -228,7 +228,7 @@ export const productos = [
         price: 58000,
         image: "/img/sandro-sandroDeAmerica.jpg",
         imageVinyl: "/img/sandro-sandroDeAmerica-vinyl.jpg",
-        description: "El disco histórico que le dio su mítico apodo, arrasando en ventas en todo el continente y definiendo su estilo inconfundible. \nTracklist destacado: 1. Rosa, Rosa, 2. Guitarras al viento, 3. Mi amigo el puma, 4. Nada más.",
+        description: "El disco histórico que le dio su mítico apodo, arrasando en ventas en todo el continente y definiendo su estilo inconfundible. \n\nTracklist destacado: \n1. Rosa, Rosa \n2. Guitarras al viento \n3. Mi amigo el puma \n4. Nada más",
         destacado: false,
         dameFuego: true,
         stock: 12
@@ -241,7 +241,7 @@ export const productos = [
         price: 48000,
         image: "/img/sandro-espectacular.jpg",
         imageVinyl: "/img/sandro-espectacular-vinyl.jpg",
-        description: "Una verdadera joya de los 70s. Su sonido contundente y arreglos orquestales acompañaron una de sus épocas más teatrales. \nTracklist destacado: 1. Dame el fuego de tu amor, 2. El maniquí, 3. Se te nota, 4. Me amas y me dejas.",
+        description: "Una verdadera joya de los 70s. Su sonido contundente y arreglos orquestales acompañaron una de sus épocas más teatrales. \n\nTracklist destacado: \n1. Dame el fuego de tu amor \n2. El maniquí \n3. Se te nota \n4. Me amas y me dejas",
         destacado: true,
         dameFuego: true,
         stock: 3
@@ -254,7 +254,7 @@ export const productos = [
         price: 65000,
         image: "/img/sandro-sandroLoMejor.jpg",
         imageVinyl: "/img/sandro-sandroLoMejor-vinyl.jpg",
-        description: "Edición especial recopilatoria con sus himnos eternos. Ideal para iniciar la colección y repasar la trayectoria de un grande. \nTracklist destacado: 1. Rosa Rosa, 2. Tengo, 3. Trigal, 4. Penumbras.",
+        description: "Edición especial recopilatoria con sus himnos eternos. Ideal para iniciar la colección y repasar la trayectoria de un grande. \n\nTracklist destacado: \n1. Rosa Rosa \n2. Tengo \n3. Trigal \n4. Penumbras",
         destacado: false,
         dameFuego: true,
         stock: 8
@@ -267,7 +267,7 @@ export const productos = [
         price: 55000,
         image: "/img/sandro-laMagiaDeSandro.jpg",
         imageVinyl: "/img/sandro-laMagiaDeSandro-vinyl.jpg",
-        description: "Rock, pop y balada se mezclan en este LP lleno de energía frenética, mostrando al Gitano en su faceta más salvaje y seductora. \nTracklist destacado: 1. Tengo, 2. Me amas y me dejas, 3. Lluvia de estrellas, 4. Y abrázame.",
+        description: "Rock, pop y balada se mezclan en este LP lleno de energía frenética, mostrando al Gitano en su faceta más salvaje y seductora. \n\nTracklist destacado: \n1. Tengo \n2. Me amas y me dejas \n3. Lluvia de estrellas \n4. Y abrázame",
         destacado: true,
         dameFuego: true,
         stock: 0
@@ -280,7 +280,7 @@ export const productos = [
         price: 49000,
         image: "/img/sandro-sandro.png",
         imageVinyl: "/img/sandro-sandro-vinyl.jpg",
-        description: "Una obra homónima cargada de dramatismo interpretativo, donde la voz y la presencia de Sandro brillan de forma espectacular. \nTracklist destacado: 1. Señor cochero, 2. Pobre mi madre querida, 3. Sin sentido, 4. Las manos.",
+        description: "Una obra homónima cargada de dramatismo interpretativo, donde la voz y la presencia de Sandro brillan de forma espectacular. \n\nTracklist destacado: \n1. Señor cochero \n2. Pobre mi madre querida \n3. Sin sentido \n4. Las manos",
         destacado: false,
         dameFuego: true,
         stock: 4
@@ -293,7 +293,7 @@ export const productos = [
         price: 60000,
         image: "/img/sandro-muchacho.jpg",
         imageVinyl: "/img/sandro-muchacho-vinyl.jpg",
-        description: "Álbum esencial que sirve como banda sonora de la exitosa película homónima protagonizada por El Gitano. Un pedazo de historia del cine y la música argentina. \nTracklist destacado: 1. Trigal, 2. Te quiero tanto, amada mía, 3. Muchacho, 4. Pupilas de cielo.",
+        description: "Álbum esencial que sirve como banda sonora de la exitosa película homónima protagonizada por El Gitano. Un pedazo de historia del cine y la música argentina. \n\nTracklist destacado: \n1. Trigal \n2. Te quiero tanto, amada mía \n3. Muchacho \n4. Pupilas de cielo",
         destacado: true,
         dameFuego: true,
         stock: 7
@@ -306,7 +306,7 @@ export const productos = [
         price: 42000,
         image: "/img/sandro-conGustoAMujer.png",
         imageVinyl: "/img/sandro-conGustoAMujer-vinyl.jpg",
-        description: "Un disco de su etapa más madura, con arreglos modernos para la época de los 90s pero manteniendo intacta la pasión y el romanticismo de siempre. \nTracklist destacado: 1. Con gusto a mujer, 2. Comprensión, 3. No me dejes, no mi amor, 4. Muriendo de amor.",
+        description: "Un disco de su etapa más madura, con arreglos modernos para la época de los 90s pero manteniendo intacta la pasión y el romanticismo de siempre. \n\nTracklist destacado: \n1. Con gusto a mujer \n2. Comprensión \n3. No me dejes, no mi amor \n4. Muriendo de amor",
         destacado: false,
         dameFuego: true,
         stock: 15

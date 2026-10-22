@@ -24,7 +24,7 @@ function Footer() {
 
       <div className={styles.pie}>
         <div className={styles.legales}>
-          <p>© {new Date().getFullYear()} Lado V. Todos los derechos reservados.</p>
+          <p>© 2026 Lado V. Todos los derechos reservados.</p>
           <small>Proyecto académico de UNAHUR</small>
         </div>
       </div>

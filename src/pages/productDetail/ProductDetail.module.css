@@ -130,6 +130,7 @@
   margin-bottom: 2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--borde, #dfcfb3);
+  white-space: pre-line;
 }
 
 
@@ -191,4 +192,24 @@
   font-size: 1.15rem;
   font-style: italic; 
   margin: 0;
+}
+
+.botonVolver {
+  width: 95px;
+  height: 35px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 3px;
+  border: 1px solid #29251f;
+  color: #e0ddd8;
+  background-color: #b94f2d; 
+  font-size: "0.8rem";
+  border-radius: 20px; 
+  padding: "5px 12px";
+}
+
+.botonVolver:hover {
+  background-color: #cc720b;
 }
