@@ -105,7 +105,7 @@ function FormularioDeEnvio() {
                     <Form.Label>Nombre y Apellido *</Form.Label>
                     <Form.Control
                         type="text"
-                        name="nombre"
+                        name="nombreYApellido"
                         value={datosEnvio.nombreYApellido}
                         placeholder="Ej. María Pérez"
                         onChange={handleChange}
