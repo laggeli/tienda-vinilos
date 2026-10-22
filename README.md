@@ -28,10 +28,10 @@
 ---
 
 ## 👥 Integrantes del Grupo
-* **González Ortiz, Celeste Alejandra** - DNI: 44413462
-* **Fajardo, Eugenia** - DNI: 33944035
-* **Fogel, Facundo** - DNI:
-* **Laginestra, Elisa** - DNI: 47308285
+* **González Ortiz, Celeste Alejandra**
+* **Fajardo, Eugenia**
+* **Fogel, Facundo**
+* **Laginestra, Elisa**
 
 ---
 
