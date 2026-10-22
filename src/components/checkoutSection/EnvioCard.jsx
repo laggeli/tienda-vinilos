@@ -4,34 +4,45 @@ import PuntosRetiroList from "../metodoEnvioSection/PuntosRetiroList";
 import TiposEnvioList from "../metodoEnvioSection/TiposEnvioList";
 import stylesEnvio from "../../pages/checkout/Checkout.module.css";
 
-function EnvioCard({ total, tipoEnvioCambia }) {
-    const [metodoEnvio, setMetodoEnvio] = useState("envio");
+function EnvioCard({ total, tipoEntregaCambia, tipoEnvioCambia }) {
+    const [metodoEntrega, setMetodoEntrega] = useState("envio");
+    const [metodoEnvio, setMetodoEnvio] = useState("");
     const mostrarGratis = total >= 100000;   
 
+    const handleMetodoEntrega = (nuevoTipoEntrega) => {
+        setMetodoEntrega(nuevoTipoEntrega);
+        if (tipoEntregaCambia) tipoEntregaCambia(nuevoTipoEntrega); 
+    };
     const handleMetodoEnvio = (nuevoTipoEnvio) => {
         setMetodoEnvio(nuevoTipoEnvio);
-        if (tipoEnvioCambia) tipoEnvioCambia(nuevoTipoEnvio); 
+        if (tipoEnvioCambia) tipoEntregaCambia(nuevoTipoEnvio); 
     };
+
     return (
         <Card className={`mb-3 ${stylesEnvio.itemEnvio}`}>
             <Card.Body className="d-flex flex-column">
                 <div className={stylesEnvio.opciones}>
                     <button 
-                        className={`${stylesEnvio.opcion} ${metodoEnvio === "envio" ? stylesEnvio.activo : ""}`} 
-                        onClick={() => handleMetodoEnvio("envio")}
+                        className={`${stylesEnvio.opcion} ${metodoEntrega === "envio" ? stylesEnvio.activo : ""}`} 
+                        onClick={() => handleMetodoEntrega("envio")}
                     > <span>Envío</span> 
                     {mostrarGratis && <span className={stylesEnvio.gratis}>Gratis</span>}
                     </button>
                     <button 
-                        className={`${stylesEnvio.opcion} ${metodoEnvio === "retiro" ? stylesEnvio.activo : ""}`}
-                        onClick={() => handleMetodoEnvio("retiro")}
+                        className={`${stylesEnvio.opcion} ${metodoEntrega === "retiro" ? stylesEnvio.activo : ""}`}
+                        onClick={() => handleMetodoEntrega("retiro")}
                     >
                      <span>Retiro</span> 
                      {mostrarGratis && <span className={stylesEnvio.gratis}>Gratis</span>}
                     </button>
                 </div>
-                {metodoEnvio === "retiro" && (<PuntosRetiroList />)}
-                {metodoEnvio === "envio" && (<TiposEnvioList total={total}/>)}
+                {metodoEntrega === "retiro" && (<PuntosRetiroList />)}
+                {metodoEntrega === "envio" && 
+                (<TiposEnvioList 
+                    total={total} 
+                    tipoEnvioCambia={tipoEnvioCambia}
+                />)
+                }
             </Card.Body>
         </Card>
     )

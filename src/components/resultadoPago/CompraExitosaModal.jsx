@@ -1,7 +1,7 @@
 import { Modal, Button } from "react-bootstrap";
 import styles from "../../components/resultadoPago/CompraExitosaModal.module.css";
 
-function CompraExitosaModal({ show, onClose, resumen, metodoEnvio }) {
+function CompraExitosaModal({ show, onClose, resumen, metodoEntrega }) {
   return (
     <Modal show={show} onHide={onClose} centered className="modalCompraExitosa">
       <Modal.Header closeButton className={styles.titulo}>
@@ -13,7 +13,7 @@ function CompraExitosaModal({ show, onClose, resumen, metodoEnvio }) {
         <p><strong>Envío:</strong> {resumen.mostrarGratis ? "Gratis" : `+$${resumen.envio}`}</p>
         <p><strong>Total:</strong> ${resumen.totalFinal}</p>
         <hr className={styles.hr}/>
-        <p><strong>Forma de entrega:</strong> {metodoEnvio.toUpperCase()}</p>
+        <p><strong>Forma de entrega:</strong> {metodoEntrega.toUpperCase()}</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={onClose} className={styles.boton}>

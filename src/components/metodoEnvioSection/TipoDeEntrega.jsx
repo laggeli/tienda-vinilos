@@ -3,10 +3,12 @@ import { useState } from "react";
 import { opcionesEnvio } from "../../data/opciones-envio.js";
 import styles from "./TipoDeEntrega.module.css";
 
-function TipoDeEntrega({total}) {
+function TipoDeEntrega({ total, tipoEnvioCambia }) {
   console.log("Valor recibido en total:", total, "Tipo:", typeof total);
   const [seleccionado, setSeleccionado] = useState(null);
   const [fechaEstimada, setFechaEstimada] = useState("");
+//   const [precioEnvio, setPrecioEnvio] = useState(0);
+
   const mostrarGratis = Number(total) >= 100000; 
 
   const calcularRangoEnvio = (diasMax) => {
@@ -32,6 +34,13 @@ function TipoDeEntrega({total}) {
     setSeleccionado(nuevoSeleccionado);
     // al destildar, limpia la fecha
     setFechaEstimada(nuevoSeleccionado ? calcularRangoEnvio(op.diasMax) : "");
+    // se pasa al padre el método de envio seleccionado y precio
+    if (tipoEnvioCambia) {
+      tipoEnvioCambia({
+        metodo: nuevoSeleccionado ? op.nombre : null,
+        precio: mostrarGratis ? 0 : (nuevoSeleccionado ? op.precio : 0),
+      });
+    }
   };
 
   return (
